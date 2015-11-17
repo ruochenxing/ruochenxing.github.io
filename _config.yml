@@ -1,5 +1,5 @@
 username: ruochenxing
-baseurl: /blog
+baseurl: /
 markdown: redcarpet
 safe: false
 highlighter: pygments
