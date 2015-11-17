@@ -4,7 +4,7 @@ safe: false
 highlighter: pygments
 title: Waiting Bar
 description: 人生苦短，说来话长
-theme: midnight
+theme: hack
 disqusname: ruochenxing
 
 # theme can be: hack, leap-day, merlot, midnight, minimal, modernist, slate, time-machine
