@@ -14,11 +14,13 @@
   	<a class="bds_count" data-cmd="count"></a>
   </div>
   <script>
+    var url='{{ page.url | prepend: site.url }}';
+    url=url.replace("ruochenxing.github.io","cafebabe.cn");  
   	window._bd_share_config = {
   		common : {
   			bdText : '{{ page.title }}',
   			bdDesc : '{{ page.description }}',
-  			bdUrl : '{{ page.url | prepend: site.url }}',
+  			bdUrl : url,
   			bdPic : '{{ page.image }}'
   		},
   		share : [{
