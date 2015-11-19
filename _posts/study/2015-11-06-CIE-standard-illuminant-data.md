@@ -5,7 +5,7 @@ tags:
   - CIE
   - photopic
 category: study
-image: http://www.electro-optical.com/_images/photopic.gif
+image: 
 description: Useful data for light understanding.
 ---
 
