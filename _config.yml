@@ -1,0 +1,71 @@
+# Site settings
+title: 研磨时光
+email: sherlock_65535@qq.com
+author: ruochenxing
+
+description: This personal blog was powered by Jekyll.
+
+# Base url
+url: "http://ruochenxing.github.io"
+
+# Pre-processing
+
+markdown: kramdown
+highlighter: pygments
+kramdown:
+  input:          GFM
+  auto_ids:       true
+  auto_id_prefix: 'id-'
+safe: true
+permalink: pretty # YYYY/MM/DD/page-title/index.html
+lsi: false # Lexical analysis (true) takes longer for higher quality
+
+# Where things are
+source:       .
+destination:  ./_site
+plugins_dir:  ./_plugins
+layouts_dir:  ./_layouts
+data_dir:     ./_data
+includes_dir: ./_includes
+collections:  null
+
+# Handling Reading
+include:      [".htaccess"]
+exclude:      ["vendor", "README.md", "node_modules", "gulpfile.js", "package.json"]
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Lists
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      false
+unpublished: false
+tag_items: 20     # Applies to categories and tags lists
+related_items: 3  # Fix 3 items in single post
+recent_items: 20  # Applies to recent posts, apps lists
+recent_posts: 7
+paginate: 5       # Applies to blog page for pagination
+# Pagination path › Important for blog page in /blog/ to work
+paginate_path: "/page:num/"
+timezone:      null
+
+# Plugins
+whitelist: []
+gems:
+  - jekyll-feed
+  - jekyll-paginate
+
+feed:
+  path: atom.xml
+
+# Embeds
+disqus_name: ruochenxing            # Your site name at Disqus
+reading_time: true    # Show est. reading time for posts
+comments: disqus      # Switch disqus | facebook | none - comments. facebook = true required for facebook comments
+google_api_key: "AIzaSyDyjuRINP4K_rYn_JlSKVGxl-li36EIDBo" # https://code.google.com/apis/console/
+# google api used for google maps
+google_analytics_ua: UA-64243703-1  # Google Analytics site specific id
+google_cse_id:  # Google Custom Search Engine unique id, please fill this id in search.html page
+addthis_pubid: ra-55d1d3f27f6078ce  # Get your pubid at https://www.addthis.com/dashboard

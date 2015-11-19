@@ -1,0 +1,37 @@
+---
+layout: pages_sidebar
+title: Categories
+permalink: /categories/
+---
+
+{% for category in site.categories %}
+<!-- Panel title -->
+<div class="panel_title">
+  <div>
+    <h4><a id="{{ category.first }}">{{ category.first }}</a></h4>
+  </div>
+  <span>View all articles under {{ category.first }}</span>
+</div><!-- End Panel title -->
+
+<div class="row">
+  <div class="col col_12_of_12">
+    <!-- List layout -->
+    <div class="list_posts_1">
+      {% for post in site.categories[category.first] %}
+        <!-- Post item -->
+        <div class="item clearfix">
+          <div class="item_content">
+
+            <h4><a href="{{ post.url }}"><span class="format">{{ category.first }}</span>{{ post.title }}</a></h4>
+            <p>{{ post.description }}</p>
+            <div class="item_meta clearfix">
+              <span class="meta_date">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="meta_author"><a href="/">{{ site.author }}</a></span>
+            </div>
+          </div>
+        </div><!-- End Post item -->
+      {% endfor %}
+    </div><!-- End List layout -->
+  </div>
+</div>
+{% endfor %}

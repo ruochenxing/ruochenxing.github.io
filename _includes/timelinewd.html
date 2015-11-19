@@ -1,0 +1,17 @@
+<!-- Timeline widet -->
+<div class="widget">
+  <div class="widget_title"><h3>Timeline</h3></div>
+  <div class="tb_widget_timeline clearfix">
+    {% for post in site.posts offset:3 limit:6 %}
+      <!-- Article -->
+      <article>
+        <span class="date">{{ post.date | date: "%m/%d/%Y" }}</span>
+        <span class="time">{{ site.author }}</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        </div>
+      </article><!-- End Article -->
+    {% endfor %}
+  </div>
+</div><!-- End Timeline widet -->

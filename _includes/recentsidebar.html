@@ -1,0 +1,21 @@
+<!-- Widget Recent Posts-->
+<div class="widget">
+<div class="widget_title"><h3>Recent posts</h3></div>
+<div class="tb_widget_top_rated clearfix">
+  {% for post in site.posts limit:3 %}
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_thumb clearfix">
+        <a href="{{ post.url }}">{% if post.image %}<img src="{{ post.image }}" alt="{{ post.title }}" class="visible animated">{% else %}<img src="/demo/500x500/9.jpg" alt="{{ post.title }}" class="visible animated">{% endif %}</a>
+      </div>
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  {% endfor %}
+</div>
+</div><!-- End Widget recent posts -->
