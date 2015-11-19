@@ -1,6 +1,6 @@
 ---
 layout: post
-title: java多线程编程
+title: java并发编程
 category: study
 tags:
     - java
