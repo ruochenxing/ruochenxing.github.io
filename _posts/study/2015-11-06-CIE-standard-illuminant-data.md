@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 没有错过的大坑舞火龙
-category: journal
+category: study
 tags:
     - Hong Kong
     - life
