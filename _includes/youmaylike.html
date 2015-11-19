@@ -1,0 +1,41 @@
+<!-- You might also like -->
+<div class="panel_title">
+  <div>
+    <h4><a href="/blog/">You might also like</a></h4>
+  </div>
+</div>
+<div class="row">
+  {% for post in site.related_posts limit:3 %}
+  <div class="col col_4_of_12">
+      <!-- Layout post -->
+      <div class="layout_post_1">
+          <div class="item_thumb">
+              <div class="thumb_icon">
+                  <a href="{{ post.url }}" jQuery><i class="fa fa-link"></i></a>
+              </div>
+              <div class="thumb_hover">
+                {% if post.image %}
+                <a href="{{ post.url }}"><img src="{{ post.image }}" alt="{{ post.title }}" class="visible animated"></a>
+                {% elsif post.video %}
+                {{ post.video }}
+                {% else %}
+                <a href="{{ post.url }}"><img src="/demo/500x500/12.jpg" alt="{{ post.title }}" class="visible animated"></a>
+                {% endif %}
+              </div>
+              <div class="thumb_meta">
+                  <span class="category" jQuery><a href="/categories/#{{ post.category }}">{{ post.category }}</a></span>
+                  <span class="comments"><a href="/">{{ site.url }}</a></span>
+              </div>
+          </div>
+          <div class="item_content">
+              <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+              <div class="item_meta clearfix">
+                  <span class="meta_date">{{ post.date | date: "%b %-d, %Y" }}</span>
+                  <span class="meta_author"><a href="#">{{ site.author }}</a></span>
+              </div>
+              <p>{{ post.description }}</p>
+          </div>
+      </div><!-- End Layout post -->
+  </div>
+  {% endfor %}
+</div><!-- End You might also like -->

@@ -1,0 +1,37 @@
+---
+layout: pages_sidebar
+title: Blog Archieve
+permalink: /archieves/
+---
+
+<!-- Panel title -->
+<div class="panel_title">
+  <div>
+    <h4><a id="archieves">Blog Archieve</a></h4>
+  </div>
+</div><!-- End Panel title -->
+
+
+<div class="row">
+
+{% for post in site.posts %}
+  <div class="col col_6_of_12">
+    <!-- List layout -->
+    <div class="list_posts_1">
+      <!-- Post item -->
+      <div class="item clearfix">
+        <div class="item_content">
+          <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+          <p>{{ post.description }}</p>
+          <div class="item_meta clearfix">
+            <span class="meta_date">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <span class="meta_author"><a href="/">{{ site.author }}</a></span>
+          </div>
+        </div>
+      </div><!-- End Post item -->
+    </div><!-- End List layout -->
+  </div>
+{% endfor %}
+
+
+</div>

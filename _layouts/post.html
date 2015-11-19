@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+  <body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-M6JR9L"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6JR9L');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Wrapper -->
+    <div id="wrapper" class="wide">
+      {% include header.html %}
+
+      <!-- Section -->
+      <section>
+        <div class="container"><!-- container -->
+          <div class="row"><!--  row -->
+            <!-- Main content -->
+            <div class="col col_9_of_12">
+              <!-- Post -->
+              <article class="post">
+                <!-- Media -->
+                {% if page.image %}
+                <div class="entry_media">
+                  <a href="{{ page.image }}" class="popup_link"><img src="{{ page.image }}" alt="{{ page.title }}"></a>
+                </div>
+                {% endif %}
+                {% if page.images %}
+                <div class="entry_media">
+                  <!-- Content slider -->
+                  <div class="content_slider">
+                    <ul>
+                      {% for image in page.images %}
+                      <!-- Item -->
+                      <li>
+                        <a href="{{ image }}" class="popup_link"><img src="{{ image }}" alt="{{ page.title }}"></a>
+                        <div class="slider_caption">
+                          <div class="thumb_link">
+                            <h3>{{ page.title }}</h3>
+                          </div>
+                        </div>
+                      </li><!-- End Item -->
+                      {% endfor %}
+                    </ul>
+                  </div><!-- End Content slider -->
+                </div>
+                {% endif %}
+                {% if page.video %}
+                <div class="entry_media">
+                  <!-- Video -->
+                  {{ page.video }}
+                </div>
+                {% endif %}
+                <!-- End Media -->
+                <!-- Full meta -->
+                <div class="full_meta clearfix">
+                  <span class="meta_format"><i class="fa fa-file-text"></i></span>
+                  <span class="meta_date">{{ page.date | date: "%b %-d, %Y" }}</span>
+                  <span class="meta_author">{{ site.author }}</span>
+                  {% if page.tags %}
+                  <span class="meta_tags"> {% for tag in page.tags %}<u>{{ tag }}</u> {% endfor %}
+                  {% endif %}
+                </div><!-- End Full meta -->
+                <!-- Entry content -->
+                <div class="entry_content">
+                  <!-- Entry title -->
+                  <h1 class="entry_title">{{ page.title }}</h1><!-- End Entry title -->
+                  {{ content }}
+                </div><!-- End entry content -->
+                <div class="bottom_wrapper"><!-- bottom tags and categories -->
+                  <!-- Entry tags -->
+                  <div class="entry_tags">
+                    <span><i class="fa fa-tags"></i> Tags</span>
+                    {% if page.tags %}
+                    {% for tag in page.tags %}
+                    <a href="/tags/#{{ tag }}">{{ tag }}</a>
+                    {% endfor %}
+                    {% endif %}
+                  </div><!-- End Entry tags -->
+                  <!-- Entry categories -->
+                  <div class="entry_tags categories">
+                    <span><i class="fa fa-folder-open"></i> Category</span>
+                    {% if page.category %}
+                    <a href="/categories/#{{ page.category }}">{{ page.category }}</a>
+                    {% endif %}
+                  </div><!-- End Entry categories -->
+                </div><!-- end bottom tags and categories -->
+              </article><!-- End Post -->
+              {% include postshare.html %}
+              {% include youmaylike.html %}
+              {% include comments.html %}
+            </div><!-- Main content End -->
+            {% include postsidebar.html %}
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </section><!-- Section End -->
+      {% include footer.html %}
+    </div><!-- Wrapper End -->
+    {% include js.html %}
+  </body>
+</html>

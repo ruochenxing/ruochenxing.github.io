@@ -1,0 +1,11 @@
+<!-- Category widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Archive</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      {% for category in site.categories limit:9 %}
+      <li><a href="/categories/#{{ category | first }}">{{ category | first }}</a> ({{ category | last | size }})</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div><!-- End Category widget -->

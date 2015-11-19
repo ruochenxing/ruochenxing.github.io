@@ -1,0 +1,23 @@
+<!-- Banners -->
+<div class="widget">
+  <div class="widget_title"><h3>Flickr</h3></div>
+  <!-- Fickr Feeds -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script src="/js/jflickrfeed/jflickrfeed.js"></script>
+  <script>
+    jQuery(document).ready(function($){
+      //you can now use $ as your jQuery object.
+      $('#bannerflickr1').jflickrfeed({
+    		limit: 8,
+    		qstrings: {
+    			id: '106195235@N05'
+    		},
+        useTemplate: false,
+    		itemCallback: function(item){
+    			$(this).append("<a href='" + item.image_m + "'><img src='" + item.image_m + "' alt=''/></a>");
+    		}
+    	});
+    });
+  </script>
+  <div id="bannerflickr1" class="tb_widget_banner_125 clearfix"></div>
+</div><!-- End Banners -->
