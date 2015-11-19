@@ -1,6 +1,6 @@
 ---
 layout: post
-title: java多线程
+title: Java线程相关知识
 category: study
 tags:
     - java
