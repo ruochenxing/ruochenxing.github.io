@@ -4,7 +4,7 @@ title: 使用git更新博文
 category: study
 tags:
     - github
-description: 因为博客是使用Github Page创建的，所以只需要更新文件即可添加博文，具体命令如下
+description: 	因为博客是使用Github Page创建的，所以只需要更新文件即可添加博文，具体命令如下
 ---
 
 git clone xxxx

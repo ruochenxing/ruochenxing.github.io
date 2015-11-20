@@ -5,7 +5,7 @@ category: study
 tags:
     - java
     - classload
-description: 虚拟机把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析、初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。从类被加载到虚拟机内存中开始，到卸载出内存为止，类的生命周期包括加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）7个阶段。类加载是Java程序运行的第一步，研究类的加载有助于了解JVM执行过程，并指导开发者采取更有效的措施配合程序执行。研究类加载机制的第二个目的是让程序能动态的控制类加载，比如热部署等，提高程序的灵活性和适应性。
+description: 	虚拟机把描述类的数据从Class文件加载到内存，并对数据进行校验、转换解析、初始化，最终形成可以被虚拟机直接使用的Java类型，这就是虚拟机的类加载机制。从类被加载到虚拟机内存中开始，到卸载出内存为止，类的生命周期包括加载（Loading）、验证（Verification）、准备（Preparation）、解析（Resolution）、初始化（Initialization）、使用（Using）和卸载（Unloading）7个阶段。类加载是Java程序运行的第一步，研究类的加载有助于了解JVM执行过程，并指导开发者采取更有效的措施配合程序执行。研究类加载机制的第二个目的是让程序能动态的控制类加载，比如热部署等，提高程序的灵活性和适应性。
 ---
 
 ## 一、类加载的时机
