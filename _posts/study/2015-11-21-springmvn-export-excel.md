@@ -5,7 +5,7 @@ category: study
 tags:
     - java
     - springmvc
-description: 在SpringMVC总导出Excel数据，并且弹出下载框
+description: 在SpringMVC中导出Excel数据，并且弹出下载框
 ---
 
 加入对应的jar包，包括springmvc,poi的，
