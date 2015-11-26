@@ -7,13 +7,9 @@ tags:
     - webservice
 description: 在SpringMVC中导出Excel数据，并且弹出下载框
 ---
-
-上一篇文章中概述了怎么在Javaweb中发布webservice，这篇文章讲解怎么传递复杂的对象
-
 所用的jar包如下
 
-![在此输入图片描述][1]
-
+![jar包](http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cn161600_5fdW_438301.png)
 当服务器返回的是List或者是Map时，一定要将其封装在一个类中，
 
 首先创建封装类,封装了List,Map对象，以及自定义的User类
@@ -570,4 +566,3 @@ PS：在学习webservice的时候，遇到过几个问题，希望有了解的�
 时，如果不加“_type=json”，浏览器会报错，不知道为什么，所以访问字符串时只能用返回json格式
 2）对于返回的List<Map>对象需要使用的转换器来实现，如果服务器返回的是一个普通类对象，但这个对象中存在List<Map>，该怎么办呢？我在osc上提到过，但没有得到回答。
 源码下载地址：http://download.csdn.net/detail/ruochenxing1/7683859
-[1]: http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cn161600_5fdW_438301.png
