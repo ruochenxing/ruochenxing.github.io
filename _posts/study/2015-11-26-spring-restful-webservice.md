@@ -568,4 +568,4 @@ PS：在学习webservice的时候，遇到过几个问题，希望有了解的�
 1）在访问http://localhost:8080/webservice/services/test/get/string/testString?_type=json
 时，如果不加“_type=json”，浏览器会报错，不知道为什么，所以访问字符串时只能用返回json格式
 2）对于返回的List<Map>对象需要使用的转换器来实现，如果服务器返回的是一个普通类对象，但这个对象中存在List<Map>，该怎么办呢？我在osc上提到过，但没有得到回答。
-源码下载地址：http://download.csdn.net/detail/ruochenxing1/7683859
+[源码下载地址](http://download.csdn.net/detail/ruochenxing1/7683859)
