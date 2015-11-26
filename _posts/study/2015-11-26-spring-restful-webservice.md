@@ -540,8 +540,11 @@ XmlParse.java
 			return listMap;
 		}
 	}
+
 可以将客户端交由spring管理
-	spring-client.xml
+
+spring-client.xml
+
 	<?xml version="1.0" encoding="UTF-8"?>
 	<beans xmlns="http://www.springframework.org/schema/beans"
 		xmlns:context="http://www.springframework.org/schema/context"
