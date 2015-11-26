@@ -5,7 +5,7 @@ category: study
 tags:
     - springmvc
     - webservice
-description: 在SpringMVC中导出Excel数据，并且弹出下载框
+description: spring,cxf,restful发布webservice传递List,Map,List<Map>
 ---
 所用的jar包如下
 
