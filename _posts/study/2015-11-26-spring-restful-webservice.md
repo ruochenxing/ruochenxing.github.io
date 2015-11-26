@@ -1,3 +1,13 @@
+---
+layout: post
+title: spring,cxf,restful发布webservice传递List,Map,List<Map>
+category: study
+tags:
+    - springmvc
+    - webservice
+description: 在SpringMVC中导出Excel数据，并且弹出下载框
+---
+
 上一篇文章中概述了怎么在Javaweb中发布webservice，这篇文章讲解怎么传递复杂的对象
 
 所用的jar包如下
