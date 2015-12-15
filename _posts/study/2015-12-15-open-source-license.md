@@ -13,6 +13,7 @@ description:	License是软件的授权许可，里面详尽表述了你获得代
 现今存在的开源协议很多，而经过Open Source Initiative 组织通过批准的开源协议目前有60多种http://www.opensource.org/licenses/alphabetical。我们在常见的开源协议如BSD, GPL, LGPL,MIT等都是OSI批准的协议。
 
 ### Apache License, 2.0(Apache-2.0)
+
 Apache Lience允许使用者修改和重新发布代码(以其他协议形式)，允许闭源商业发布和销售。
 Apache Lience鼓励代码共享和尊重原作者的著作权。
 使用Apache Licence协议，需要遵守以下规则：
@@ -29,6 +30,7 @@ Apache Lience鼓励代码共享和尊重原作者的著作权。
 使用apache Licence vesion 2.0协议的开源软件有：Hadoop 、apache httpserver、Spring Framework、MongoDB 。
 
 ### GPL (GNU General Public License)
+
 它的主要内容为：只要在一个软件中使用(“使用”指类库引用或者修改后的代码) GPL 协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费。这个协议就不太适合商用软件，或者准备使用GPL开源组件的商用项目。基于这个协议的项目，极大的提高了开源软件的数量。
 使用GPL协议，需要遵守以下规则：
 	1、确保软件自始至终都以开放源代码形式发布，保护开发成果不被窃取用作商业发售。任何一套软 件，只要其中使用了受 GPL 协议保护的第三方软件的源程序，并向非开发人员发布时，软件本身也就自动成为受 GPL 保护并且约束的实体。也就是说，此时它必须开放源代码。
@@ -44,6 +46,7 @@ Apache Lience鼓励代码共享和尊重原作者的著作权。
 采用这个协议的开源软件有： JBoss、 FCKeditor 、 Hibernate。之前extjs就因为从LGPL转换到GPL带来了不少的震动。
 
 ### BSD开源协议(Berkerley Software Distribution)
+
 目前分为BSD 3-Clause和BSD 2-Clause。顾名思义，3-Clause包含3个条款，2-Clause只有两个。
 这个协议相对上面两个协议宽松很多，允许使用者修改和重新发布代码，也允许使用或在BSD代码基础上开发商业软件发布和销售，因此是适用于商业软件的。
 =使用者别太高兴，使用时还必须做到满足三个条件（2-Clause则不带第3条）：
@@ -52,13 +55,19 @@ Apache Lience鼓励代码共享和尊重原作者的著作权。
 	3）不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。
 适用BSD协议的开源软件有： nginx、CruiseControl、Redis。
 要点：商业软件可以使用，也可以修改使用BSD协议的代码。
+
 ### MIT (MIT license)
+
 源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称X11协议。MIT与BSD类似，但是比BSD协议更加宽松，是目前最少限制的协议。这个协议唯一的条件就是在修改后的代码或者发行包包含原作者的许可信息。适用商业软件。使用MIT的软件项目有：jquery、Node.js。
 要点：商业软件可以使用，也可以修改MIT协议的代码，甚至可以出售MIT协议的代码。
+
 ### MPL (Mozilla Public License 1.1)
+
 MPL协议允许免费重发布、免费修改，但要求修改后的代码版权归软件的发起者 。这种授权维护了商业软件的利益，它要求基于这种软件的修改无偿贡献版权给该软件。这样，围绕该软件的所有代码的版权都集中在发起开发人的手中。但MPL是允许修改，无偿使用得。MPL软件对链接没有要求。
 要点：商业软件可以使用，也可以修改MPL协议的代码，但修改后的代码版权归软件的发起者。
+
 ### EPL (Eclipse Public License 1.0)
+
 EPL允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布。
 
 使用EPL协议，需要遵守以下规则：
