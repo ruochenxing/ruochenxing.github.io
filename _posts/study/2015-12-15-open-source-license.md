@@ -5,7 +5,7 @@ category: study
 tags:
     - open source
     - license
-description:License是软件的授权许可，里面详尽表述了你获得代码后拥有的权利，可以对别人的作品进行何种操作，何种操作又是被禁止的。现今存在的开源协议很多，而经过Open Source Initiative组织通过批准的开源协议目前有58种（http://www.opensource.org/licenses /alphabetical）。我们在常见的开源协议如BSD, GPL, LGPL,MIT等都是OSI批准的协议。如果要开源自己的代码，最好也是选择这些被批准的开源协议。这里我们来看四种最常用的开源协议及它们的适用范围，供那些准备开源或者使用开源产品的开发人员/厂家参考。
+description:	License是软件的授权许可，里面详尽表述了你获得代码后拥有的权利，可以对别人的作品进行何种操作，何种操作又是被禁止的。现今存在的开源协议很多，而经过Open Source Initiative组织通过批准的开源协议目前有58种。我们在常见的开源协议如BSD, GPL, LGPL,MIT等都是OSI批准的协议。如果要开源自己的代码，最好也是选择这些被批准的开源协议。这里我们来看四种最常用的开源协议及它们的适用范围，供那些准备开源或者使用开源产品的开发人员/厂家参考。
 ---
 
 ## 开源协议的种类
