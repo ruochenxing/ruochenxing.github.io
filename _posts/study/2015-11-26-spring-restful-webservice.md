@@ -562,6 +562,7 @@ spring-client.xml
 				value="http://localhost:8080/webservice/services/test/" />
 		</bean>
 	</beans>
+	
 至此大功告成。
 
 PS：在学习webservice的时候，遇到过几个问题，希望有了解的能够告知，可以在我的博客下留言，,先谢谢了，问题如下
