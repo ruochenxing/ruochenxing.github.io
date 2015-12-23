@@ -30,7 +30,7 @@ Apache Lience鼓励代码共享和尊重原作者的著作权。
 	3) 授权免费 无版税， 前期、后期均无任何费用。
 	4) 授权无排他性 任何人都可以获得授权
 	5) 授权不可撤消，一旦获得授权，没有任何人可以取消。比如，你基于该产品代码开发了衍生产品，你不用担心会在某一天被禁止使用该代码
-	
+
 使用apache Licence vesion 2.0协议的开源软件有：Hadoop 、apache httpserver、Spring Framework、MongoDB 。
 
 ### GPL (GNU General Public License)
