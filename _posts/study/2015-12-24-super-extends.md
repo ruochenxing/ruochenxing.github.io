@@ -5,8 +5,7 @@ category: study
 tags:
     - generics
     - java
-description:经常发现有List<? super T>、Set<? extends T>的声明，是什么意思呢？<? super T>表示包括T在内的任何T的父类，<? extends T>表示包括T在内的任何T的子类，下面我们详细分析一下两种通配符具体的区别。
-
+description:泛型中super和extends的区别,详细分析一下两种通配符具体的区别。
 ---
 
 ## extends
