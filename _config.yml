@@ -11,7 +11,7 @@ url: "http://ruochenxing.github.io"
 # Pre-processing
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 kramdown:
   input:          GFM
   auto_ids:       true
