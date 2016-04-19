@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Java线程相关知识 | 研磨时光</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="baidu-site-verification" content="jPvjCZm1Xb" />
+  <!-- Post Propertites -->
+  <link rel="canonical" href="http://ruochenxing.github.io/study/2015/05/07/java-thread/">
+  <meta name="description" content="当多个线程竞争同一个资源时，如果对资源的访问顺序敏感，就称存在竟态条件。导致竟态条件发生的代码区称作临界区。允许被多个线程同时执行的代码称作线程安全的代码。线程安全的代码不包含竞态条件。当多个线程同时更新共享资源时会引发竞态条件。局部变量存储在线程自己的栈中。也就是说，局部变量永远也不会被多个线程共享。所以，基础类型的局部变量是线程安全的。对象的局部引用和基础类型的局部变量不太一样。尽管引用本身没有被共享，但引用所指的对象并没有存储在线程的栈内。所有的对象都存在共享堆中。如果在某个方法中创建的对象不会逃逸出（译者注：即该对象不会被其它方法获得，也不会被非局部变量引用到）该方法，那么它就是线程安全的。实际上，哪怕将这个对象作为参数传给其它方法，只要别的线程获取不到这个对象，那它仍是线程安全的。">
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/fontawesome.css">
+  <link rel="stylesheet" href="/css/weather.css">
+  <link rel="stylesheet" href="/css/colors.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- Responsive -->
+  <link rel="stylesheet" type="text/css" media="(max-width:768px)" href="/css/responsive-0.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:769px) and (max-width:992px)" href="/css/responsive-768.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:993px) and (max-width:1200px)" href="/css/responsive-992.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:1201px)" href="/css/responsive-1200.css">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?110582bcf27621f641ed43bcfe307bf4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <!--
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-70450667-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  -->
+</head>
+
+  <body>
+    <!-- Google Tag Manager 
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCTQ64"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-NCTQ64');</script>
+    End Google Tag Manager -->
+    <!-- Wrapper -->
+    <div id="wrapper" class="wide">
+      <!-- Header -->
+<header id="header" role="banner">
+<!-- Header meta -->
+<div class="header_meta" class="sticky header_meta">
+  <div class="container">
+
+    <!-- Weather -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$.get("http://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("Location: " + response.city + ", " + response.region);
+    $("#details").html(JSON.stringify(response, null, 4));
+    $("#city").html(response.city + ", " + response.country);
+    $("#loc").html(response.loc);
+    var result = response.loc.split(",");
+    var lat = result[0];
+    var lon = result[1];
+    document.getElementById('city').value = response.city;
+
+    $.get("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=2de143494c0b295cca9337e1e96b00e0", function (wdata) {
+      var temp = (wdata.main.temp);
+      var weather = (wdata.weather[0].main);
+      $("#temp").html(temp + "°C");
+    });
+
+}, "jsonp");
+</script>
+
+<div class="weather_forecast">
+  <i class="wi wi-day-cloudy"></i>
+  <span class="city" id="city"></span>
+  <span class="temp" id="temp"></span>
+</div><!-- End Weather forecast -->
+
+
+    <!-- Scroll Up -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(window).scroll(function() {
+          if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+              $('#return-to-top').fadeIn(200);    // Fade in the arrow
+          } else {
+              $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+          }
+      });
+      $('#return-to-top').click(function() {      // When arrow is clicked
+          $('body,html').animate({
+              scrollTop : 5                       // Scroll to top of body
+          }, 500);
+      });
+    </script>
+    <!-- Scroll Up End -->
+
+    <!-- Top menu -->
+    <nav class="top_navigation" role="navigation">
+      <span class="top_navigation_toggle"><i class="fa fa-reorder"></i></span>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li class="menu-item-has-children"><a href="#">Pages</a>
+            <span class="top_sub_menu_toggle"></span>
+            <ul class="sub-menu">
+                <li><a href="/404.html">404 Page</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/archieves/">Blog Archieve</a></li>
+                <li><a href="/about/">About Me</a></li>
+            </ul>
+        </li>
+        <li class="search_icon_form"><a href="#"><i class="fa fa-search"></i></a>
+          <div class="sub-search">
+            <form action="/search/" target="_blank" method="get">
+              <input type="search" name=q size=40 placeholder="Search in site...">
+              <input type="submit" value="Search">
+            </form>
+          </div>
+        </li>
+      </ul>
+    </nav><!-- End Top menu -->
+  </div>
+</div><!-- End Header meta -->
+<!-- Header main -->
+<div id="header_main" class="sticky header_main">
+    <div class="container">
+        <!-- Logo -->
+        <div class="site_brand">
+            <h1 id="site_title"><a href="/">研磨时光<span></span></a></h1>
+            <h2 id="site_description">&nbsp;&nbsp;C'est La vie</h2>
+        </div><!-- End Logo -->
+        <!-- Site navigation -->
+        <nav class="site_navigation" role="navigation">
+          <span class="site_navigation_toggle"><i class="fa fa-reorder"></i></span>
+          <ul class="menu">
+            <li><a href="/">Home<div class="subtitle">Frontpage</div></a></li>
+            <li class="menu-item-has-children has_dt_mega_menu"><a href="/">Mega Menu<div class="subtitle">Widget Menu</div></a>
+  <span class="site_sub_menu_toggle"></span>
+  <ul class="dt_mega_menu" jQuery>
+    <li>
+      <!-- Timeline widet -->
+<div class="widget">
+  <div class="widget_title"><h3>Timeline</h3></div>
+  <div class="tb_widget_timeline clearfix">
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/24/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/15/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/15/open-source-license/">各种开源协议简述</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/26/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/26/spring-restful-webservice/">spring,cxf,restful发布webservice传递List,Map,List<Map></a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/21/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/21/springmvn-export-excel/">springmvc导出excel并弹出下载框</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">07/11/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/07/11/jvmclassloading/">JVM类加载机制</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">06/12/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/06/12/gitsubmit/">使用git更新博文</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+  </div>
+</div><!-- End Timeline widet -->
+
+      <!-- Recent posts -->
+<div class="widget">
+  <div class="widget_title"><h3>Recent posts</h3></div>
+  <div class="tb_widget_recent_list clearfix">
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/26/deep-learning/">深度学习笔记</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 26, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/26/deep-learning/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/19/java8-lambda/">Java 8 lambda表达式介绍</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 19, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/19/java8-lambda/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/01/java8-lambda-demo/">Java 8十个lambda表达式案例</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 1, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/01/java8-lambda-demo/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Dec 24, 2015</span>
+            <span class="meta_author"><a href="/study/2015/12/24/super-extends/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+  </div>
+</div><!-- End Recent posts -->
+
+      <!-- Category widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Archive</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      
+      <li><a href="/categories/#study">study</a> (12)</li>
+      
+      <li><a href="/categories/#life">life</a> (1)</li>
+      
+    </ul>
+  </div>
+</div><!-- End Category widget -->
+
+    </li>
+  </ul>
+</li>
+
+            <!--<li><a href="/news/">News<div class="subtitle">Interests</div></a></li>-->
+          </ul>
+        </nav><!-- End Site navigation -->
+    </div>
+</div><!-- End Header main -->
+</header><!-- End Header -->
+
+      <!-- Section -->
+      <section>
+        <div class="container"><!-- container -->
+          <div class="row"><!--  row -->
+            <!-- Main content -->
+            <div class="col col_9_of_12">
+              <!-- Post -->
+              <article class="post">
+                <!-- Media -->
+                
+                
+                
+                <!-- End Media -->
+                <!-- Full meta -->
+                <div class="full_meta clearfix">
+                  <span class="meta_format"><i class="fa fa-file-text"></i></span>
+                  <span class="meta_date">May 7, 2015</span>
+                  <span class="meta_author">ruochenxing</span>
+                  
+                  <span class="meta_tags"> <u>java</u> <u>thread</u> 
+                  
+                </div><!-- End Full meta -->
+                <!-- Entry content -->
+                <div class="entry_content">
+                  <!-- Entry title -->
+                  <h1 class="entry_title">Java线程相关知识</h1><!-- End Entry title -->
+                  <h2 id="id-section">竟态条件&amp;临界区</h2>
+<p>当多个线程竞争同一个资源时，如果对资源的访问顺序敏感，就称存在竟态条件。导致竟态条件发生的代码区称作临界区
+## 线程安全
+允许被多个线程同时执行的代码称作线程安全的代码。线程安全的代码不包含竞态条件。当多个线程同时更新共享资源时会引发竞态条件。
+### 局部变量
+局部变量存储在线程自己的栈中。也就是说，局部变量永远也不会被多个线程共享。所以，基础类型的局部变量是线程安全的。
+### 局部的对象引用
+对象的局部引用和基础类型的局部变量不太一样。尽管引用本身没有被共享，但引用所指的对象并没有存储在线程的栈内。所有的对象都存在共享堆中。如果在某个方法中创建的对象不会逃逸出（译者注：即该对象不会被其它方法获得，也不会被非局部变量引用到）该方法，那么它就是线程安全的。实际上，哪怕将这个对象作为参数传给其它方法，只要别的线程获取不到这个对象，那它仍是线程安全的。下面是一个线程安全的局部引用样例：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">someMethod</span><span class="p">(</span><span class="o">){</span>
+		<span class="n">LocalObject</span> <span class="n">localObject</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LocalObject</span><span class="o">();</span>
+		<span class="n">localObject</span><span class="o">.</span><span class="na">callMethod</span><span class="o">();</span>
+		<span class="n">method2</span><span class="o">(</span><span class="n">localObject</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="n">method2</span><span class="o">(</span><span class="n">LocalObject</span> <span class="n">localObject</span><span class="o">){</span>
+		<span class="n">localObject</span><span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="s">"value"</span><span class="o">);</span>
+	<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>样例中<code class="highlighter-rouge">LocalObject</code>对象没有被方法返回，也没有被传递给<code class="highlighter-rouge">someMethod()</code>方法外的对象。每个执行<code class="highlighter-rouge">someMethod()</code>的线程都会创建自己的<code class="highlighter-rouge">LocalObject</code>对象，并赋值给<code class="highlighter-rouge">localObject</code>引用。因此，这里的<code class="highlighter-rouge">LocalObject</code>是线程安全的。事实上，整个<code class="highlighter-rouge">someMethod()</code>都是线程安全的。即使将<code class="highlighter-rouge">LocalObject</code>作为参数传给同一个类的其它方法或其它类的方法时，它仍然是线程安全的。当然，如果<code class="highlighter-rouge">LocalObject</code>通过某些方法被传给了别的线程，那它就不再是线程安全的了。
+### 对象成员
+对象成员存储在堆上。如果两个线程同时更新同一个对象的同一个成员，那这个代码就不是线程安全的。下面是一个样例：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NotThreadSafe</span><span class="o">{</span>
+		<span class="n">StringBuilder</span> <span class="n">builder</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+		<span class="kd">public</span> <span class="n">add</span><span class="o">(</span><span class="n">String</span> <span class="n">text</span><span class="o">){</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">builder</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">text</span><span class="o">);</span>
+	    	<span class="o">}</span>	
+	<span class="o">}</span>
+</code></pre>
+</div>
+<p>如果两个线程同时调用同一个<code class="highlighter-rouge">NotThreadSafe</code>实例上的<code class="highlighter-rouge">add()</code>方法，就会有竞态条件问题。例如：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="n">NotThreadSafe</span> <span class="n">sharedInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NotThreadSafe</span><span class="o">();</span>
+	<span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">MyRunnable</span><span class="o">(</span><span class="n">sharedInstance</span><span class="o">)).</span><span class="na">start</span><span class="o">();</span>
+	<span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">MyRunnable</span><span class="o">(</span><span class="n">sharedInstance</span><span class="o">)).</span><span class="na">start</span><span class="o">();</span>
+	<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyRunnable</span> <span class="kd">implements</span> <span class="n">Runnable</span><span class="o">{</span>
+		<span class="n">NotThreadSafe</span> <span class="n">instance</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="kd">public</span> <span class="n">MyRunnable</span><span class="o">(</span><span class="n">NotThreadSafe</span> <span class="n">instance</span><span class="o">){</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">instance</span> <span class="o">=</span> <span class="n">instance</span><span class="o">;</span>
+		<span class="o">}</span>
+		<span class="kd">public</span> <span class="kt">void</span> <span class="n">run</span><span class="o">(){</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"some text"</span><span class="o">);</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+</code></pre>
+</div>
+<p>注意两个<code class="highlighter-rouge">MyRunnable</code>共享了同一个<code class="highlighter-rouge">NotThreadSafe</code>对象。因此，当它们调用<code class="highlighter-rouge">add()</code>方法时会造成竞态条件。
+当然，如果这两个线程在不同的<code class="highlighter-rouge">NotThreadSafe</code>实例上调用<code class="highlighter-rouge">call()</code>方法，就不会导致竞态条件。下面是稍微修改后的例子：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	<span class="k">new</span> <span class="nf">Thread</span><span class="p">(</span><span class="k">new</span> <span class="n">MyRunnable</span><span class="o">(</span><span class="k">new</span> <span class="n">NotThreadSafe</span><span class="o">())).</span><span class="na">start</span><span class="o">();</span>
+	<span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">MyRunnable</span><span class="o">(</span><span class="k">new</span> <span class="n">NotThreadSafe</span><span class="o">())).</span><span class="na">start</span><span class="o">();</span>
+</code></pre>
+</div>
+
+<p>现在两个线程都有自己单独的<code class="highlighter-rouge">NotThreadSafe</code>对象，调用<code class="highlighter-rouge">add()</code>方法时就会互不干扰，再也不会有竞态条件问题了。所以非线程安全的对象仍可以通过某种方式来消除竞态条件。
+## 线程控制逃逸规则
+线程控制逃逸规则可以帮助你判断代码中对某些资源的访问是否是线程安全的。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1) 如果一个资源的创建，使用，销毁都在同一个线程内完成，
+
+2) 且永远不会脱离该线程的控制，则该资源的使用就是线程安全的。
+</code></pre>
+</div>
+
+<p>资源可以是对象，数组，文件，数据库连接，套接字等等。Java中你无需主动销毁对象，所以“销毁”指不再有引用指向对象。
+即使对象本身线程安全，但如果该对象中包含其他资源（文件，数据库连接），整个应用也许就不再是线程安全的了。比如2个线程都创建了各自的数据库连接，每个连接自身是线程安全的，但它们所连接到的同一个数据库也许不是线程安全的。比如，2个线程执行如下代码：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1) 检查记录X是否存在，如果不存在，插入X
+</code></pre>
+</div>
+
+<p>如果两个线程同时执行，而且碰巧检查的是同一个记录，那么两个线程最终可能都插入了记录：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>1) 线程1检查记录X是否存在。检查结果：不存在
+
+2) 线程2检查记录X是否存在。检查结果：不存在
+
+3) 线程1插入记录X
+
+4) 线程2插入记录X
+</code></pre>
+</div>
+
+<p>同样的问题也会发生在文件或其他共享资源上。因此，区分某个线程控制的对象是资源本身，还是仅仅到某个资源的引用很重要。</p>
+
+<h2 id="id-section-1">线程安全的体现</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>不可变：对象被构建完后，其外部可见状态永远不会改变
+绝对线程安全：不管运行环境如何，调用者都不需要任何额外的同步措施
+相对线程安全：Java语言中的大部分线程安全类，或通常意义所说的线程安全。其保证单独的操作是安全的，对于一些特定顺序的连续调用，则需要额外的同步措施
+线程兼容：Java语言中的大部分类（ArrayList,HashMap等），对象本身并不是线程安全的，但是可以通过在客户端使用同步措施来保证对象在并发环境下安全使用，
+线程对立：无论使用哪种同步措施都不能保证线程安全，例如Thread的suspend resume等 ## 线程安全的实现方法：
+互斥同步：是一种悲观的并发策略，多个线程并发访问共享数据时，保证共享数据在同一时刻只能被一个（或者是一些，使用信号量时）线程使用；临界区，互斥量，信号量都是主要的互斥方式：synchronized，ReentrantLock等
+非阻塞同步：CAS指令，例如原子类的AtomicInteger.incrementAndGet()
+无同步方案：
+    可重入代码：不涉及数据共享的代码
+    线程本地共享：ThreadLocal ## 锁优化：
+适应性自旋：互斥同步对性能最大的影响是阻塞的实现，挂起线程和恢复线程的操作都需要转入内核态中完成，带来性能并发压力。如果物理机上有一个以上的处理器，能让两个以上的线程同时并行执行，当一个线程请求一个已经被另一个线程所占用的锁时，我们就可以让这个线程不要阻塞，而是选择“稍等一下”，让这个线程执行自旋，不放弃处理器的时间，看看另一个线程是否很快释放锁
+锁消除：对于一些代码，虽然要求同步，但是被检测到不可能存在数据共享，则可以对竞争的锁进行优化消除，例如局部变量的StringBuffer对象的多次append操作。
+锁粗化：如果一系列的重复操作都对同一个对象频繁的加锁解锁，则可以将加锁同步的范围扩展（粗化）到整个操作序列的外部，例如上面的append()，就是扩展到第一个append()操作之前和最后一个之后，这样只需加锁一次
+轻量级锁：没有多线程竞争的前提下，减少传统的重量级锁在使用时对操作系统互斥量产生的性能消耗；其提升性能的依据是，对于绝大部分锁，在整个同步周期内都是不存在竞争的。
+偏向锁：（JDK1.6）消除数据在无竞争情况下的同步原语，如果轻量锁是在无竞争的情况下使用CAS操作去消除同步使用的互斥量，那偏向锁就是在无竞争的情况下把整个同步都消除掉，连CAS操作都不做
+</code></pre>
+</div>
+
+                </div><!-- End entry content -->
+                <div class="bottom_wrapper"><!-- bottom tags and categories -->
+                  <!-- Entry tags -->
+                  <div class="entry_tags">
+                    <span><i class="fa fa-tags"></i> Tags</span>
+                    
+                    
+                    <a href="/tags/#java">java</a>
+                    
+                    <a href="/tags/#thread">thread</a>
+                    
+                    
+                  </div><!-- End Entry tags -->
+                  <!-- Entry categories -->
+                  <div class="entry_tags categories">
+                    <span><i class="fa fa-folder-open"></i> Category</span>
+                    
+                    <a href="/categories/#study">study</a>
+                    
+                  </div><!-- End Entry categories -->
+                </div><!-- end bottom tags and categories -->
+              </article><!-- End Post -->
+              <!-- Baidu Share-->
+<div class="widget">
+<div class="widget_title"><h3>Share this post</h3></div>
+<div class="tb_widget_weibo clearfix">
+  <div class="bdsharebuttonbox alignright" data-tag="share_1">
+  	<a class="bds_tsina" data-cmd="tsina"></a>
+    <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+  	<a class="bds_douban" data-cmd="douban"></a>
+    <a class="bds_weixin" data-cmd="weixin"></a>
+    <a class="bds_fbook" data-cmd="fbook"></a>
+    <a class="bds_twi" data-cmd="twi"></a>
+    <a class="bds_evernotecn" data-cmd="evernotecn"></a>
+  	<a class="bds_more" data-cmd="more">更多</a>
+  	<a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    var url='http://ruochenxing.github.io/study/2015/05/07/java-thread/';
+    url=url.replace("ruochenxing.github.io","cafebabe.cn");  
+  	window._bd_share_config = {
+  		common : {
+  			bdText : 'Java线程相关知识',
+  			bdDesc : '当多个线程竞争同一个资源时，如果对资源的访问顺序敏感，就称存在竟态条件。导致竟态条件发生的代码区称作临界区。允许被多个线程同时执行的代码称作线程安全的代码。线程安全的代码不包含竞态条件。当多个线程同时更新共享资源时会引发竞态条件。局部变量存储在线程自己的栈中。也就是说，局部变量永远也不会被多个线程共享。所以，基础类型的局部变量是线程安全的。对象的局部引用和基础类型的局部变量不太一样。尽管引用本身没有被共享，但引用所指的对象并没有存储在线程的栈内。所有的对象都存在共享堆中。如果在某个方法中创建的对象不会逃逸出（译者注：即该对象不会被其它方法获得，也不会被非局部变量引用到）该方法，那么它就是线程安全的。实际上，哪怕将这个对象作为参数传给其它方法，只要别的线程获取不到这个对象，那它仍是线程安全的。',
+  			bdUrl : url,
+  			bdPic : ''
+  		},
+  		share : [{
+  			"bdSize" : 16
+  		}]
+  	}
+  	with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+  </script>
+</div>
+</div>
+
+              <!-- Comments -->
+<div id="comments">
+  <div class="panel_title">
+    <div>
+      <h4><a href="/">Comments</a></h4>
+    </div>
+  </div>
+  <!--disqus -->
+  <div id="disqus_thread"></div>
+<script>
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; //Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER;//Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//ruochenxing.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+<!-- End Comments -->
+            </div><!-- Main content End -->
+            <!-- Sidebar -->
+<div class="col col_3_of_12">
+  <!-- Widget Search widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Search widget</h3></div>
+  <div class="tb_widget_search">
+    <form action="/search/" target="_blank" method="get">
+      <input type="text" name=q size=40 placeholder="Search in site...">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</div>
+<!-- End Widget Search widget -->
+  <!-- Widget timeline -->
+<div class="widget">
+  <div class="widget_title"><h3>Timeline</h3></div>
+  <div class="tb_widget_timeline clearfix">
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/24/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/15/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/15/open-source-license/">各种开源协议简述</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/26/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/26/spring-restful-webservice/">spring,cxf,restful发布webservice传递List,Map,List<Map></a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/21/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/21/springmvn-export-excel/">springmvc导出excel并弹出下载框</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">07/11/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/07/11/jvmclassloading/">JVM类加载机制</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">06/12/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/06/12/gitsubmit/">使用git更新博文</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">05/07/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/05/07/java-thread/">Java线程相关知识</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+  </div>
+</div><!-- End Widget timeline -->
+
+  <!-- Friendly Links -->
+<div class="widget">
+  <div class="widget_title"><h3>Friendly Links</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      <li><a href="https://github.com/ruochenxing" target="_blank">GitHub</a> <i class="fa"></i></li>
+      <li><a href="http://www.zhihu.com/people/ruo-chen-xing" target="_blank">知乎</a> <i class="fa"></i></li>
+      <li><a href="http://my.oschina.net/aptx4869" target="_blank">开源中国</a> <i class="fa"></i></li>
+    </ul>
+  </div>
+</div>
+<!-- End Friendly Links  -->
+</div><!-- End Sidebar -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </section><!-- Section End -->
+      <!-- Footer -->
+<footer id="footer">
+<div class="container">
+  <div class="row">
+    <div class="col col_3_of_12">
+      <!-- Widget Text widget -->
+      <div class="widget">
+        <div class="widget_title"><h3>Bloginfo</h3></div>
+        <p>This personal blog was powered by Jekyll.fork from github.com/flinhong/flinhong.github.io</p>
+      </div>
+      <!-- End Widget text widget -->
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Widget Recent Posts-->
+<div class="widget">
+<div class="widget_title"><h3>Recent posts</h3></div>
+<div class="tb_widget_top_rated clearfix">
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 26, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/26/deep-learning/">深度学习笔记</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 19, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/19/java8-lambda/">Java 8 lambda表达式介绍</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 1, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/01/java8-lambda-demo/">Java 8十个lambda表达式案例</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+</div>
+</div><!-- End Widget recent posts -->
+
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Widget Social widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Socialize</h3></div>
+  <div class="tb_widget_socialize clearfix">
+    <a href="http://weibo.com/vaeconan" target="_blank" class="icon google">
+      <div class="symbol"><i class="fa fa-weibo"></i></div>
+      <div class="text"><p>微博</p><p>@若晨星</p></div>
+    </a>
+  </div>
+</div>
+<!-- End Widget Social widget -->
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Friendly Links -->
+<div class="widget">
+  <div class="widget_title"><h3>Friendly Links</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      <li><a href="https://github.com/ruochenxing" target="_blank">GitHub</a> <i class="fa"></i></li>
+      <li><a href="http://www.zhihu.com/people/ruo-chen-xing" target="_blank">知乎</a> <i class="fa"></i></li>
+      <li><a href="http://my.oschina.net/aptx4869" target="_blank">开源中国</a> <i class="fa"></i></li>
+    </ul>
+  </div>
+</div>
+<!-- End Friendly Links  -->
+    </div>
+  </div>
+</div>
+</footer><!-- End Footer -->
+<a href="#top" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+    </div><!-- Wrapper End -->
+    <!-- Scripts -->
+<script type="text/javascript" src="/js/jqueryscript.min.js"></script>
+<script type="text/javascript" src="/js/jqueryuiscript.min.js"></script>
+<script type="text/javascript" src="/js/easing.min.js"></script>
+<script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="/js/magnific.min.js"></script>
+<script type="text/javascript" src="/js/bxslider.min.js"></script>
+<script type="text/javascript" src="/js/fitvids.min.js"></script>
+<script type="text/javascript" src="/js/viewportchecker.min.js"></script>
+<script type="text/javascript" src="/js/init.js"></script>  
+
+  </body>
+</html>

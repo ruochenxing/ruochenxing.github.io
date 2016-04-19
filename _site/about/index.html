@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Me | 研磨时光</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="baidu-site-verification" content="jPvjCZm1Xb" />
+  <!-- Post Propertites -->
+  <link rel="canonical" href="http://ruochenxing.github.io/about/">
+  <meta name="description" content="This personal blog was powered by Jekyll.fork from github.com/flinhong/flinhong.github.io">
+  <!-- Favicons -->
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/fontawesome.css">
+  <link rel="stylesheet" href="/css/weather.css">
+  <link rel="stylesheet" href="/css/colors.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+
+  <!-- Responsive -->
+  <link rel="stylesheet" type="text/css" media="(max-width:768px)" href="/css/responsive-0.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:769px) and (max-width:992px)" href="/css/responsive-768.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:993px) and (max-width:1200px)" href="/css/responsive-992.css">
+  <link rel="stylesheet" type="text/css" media="(min-width:1201px)" href="/css/responsive-1200.css">
+  <link href='http://fonts.googleapis.com/css?family=Titillium+Web:300,300italic,400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?110582bcf27621f641ed43bcfe307bf4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+  </script>
+  <!--
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-70450667-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  -->
+</head>
+
+  <body>
+<!-- Google Tag Manager 
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NCTQ64"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NCTQ64');</script>
+ End Google Tag Manager -->
+    <!-- Wrapper -->
+    <div id="wrapper" class="wide">
+      <!-- Header -->
+<header id="header" role="banner">
+<!-- Header meta -->
+<div class="header_meta" class="sticky header_meta">
+  <div class="container">
+
+    <!-- Weather -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+$.get("http://ipinfo.io", function (response) {
+    $("#ip").html("IP: " + response.ip);
+    $("#address").html("Location: " + response.city + ", " + response.region);
+    $("#details").html(JSON.stringify(response, null, 4));
+    $("#city").html(response.city + ", " + response.country);
+    $("#loc").html(response.loc);
+    var result = response.loc.split(",");
+    var lat = result[0];
+    var lon = result[1];
+    document.getElementById('city').value = response.city;
+
+    $.get("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&units=metric&appid=2de143494c0b295cca9337e1e96b00e0", function (wdata) {
+      var temp = (wdata.main.temp);
+      var weather = (wdata.weather[0].main);
+      $("#temp").html(temp + "°C");
+    });
+
+}, "jsonp");
+</script>
+
+<div class="weather_forecast">
+  <i class="wi wi-day-cloudy"></i>
+  <span class="city" id="city"></span>
+  <span class="temp" id="temp"></span>
+</div><!-- End Weather forecast -->
+
+
+    <!-- Scroll Up -->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+      $(window).scroll(function() {
+          if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+              $('#return-to-top').fadeIn(200);    // Fade in the arrow
+          } else {
+              $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+          }
+      });
+      $('#return-to-top').click(function() {      // When arrow is clicked
+          $('body,html').animate({
+              scrollTop : 5                       // Scroll to top of body
+          }, 500);
+      });
+    </script>
+    <!-- Scroll Up End -->
+
+    <!-- Top menu -->
+    <nav class="top_navigation" role="navigation">
+      <span class="top_navigation_toggle"><i class="fa fa-reorder"></i></span>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li class="menu-item-has-children"><a href="#">Pages</a>
+            <span class="top_sub_menu_toggle"></span>
+            <ul class="sub-menu">
+                <li><a href="/404.html">404 Page</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/archieves/">Blog Archieve</a></li>
+                <li><a href="/about/">About Me</a></li>
+            </ul>
+        </li>
+        <li class="search_icon_form"><a href="#"><i class="fa fa-search"></i></a>
+          <div class="sub-search">
+            <form action="/search/" target="_blank" method="get">
+              <input type="search" name=q size=40 placeholder="Search in site...">
+              <input type="submit" value="Search">
+            </form>
+          </div>
+        </li>
+      </ul>
+    </nav><!-- End Top menu -->
+  </div>
+</div><!-- End Header meta -->
+<!-- Header main -->
+<div id="header_main" class="sticky header_main">
+    <div class="container">
+        <!-- Logo -->
+        <div class="site_brand">
+            <h1 id="site_title"><a href="/">研磨时光<span></span></a></h1>
+            <h2 id="site_description">&nbsp;&nbsp;C'est La vie</h2>
+        </div><!-- End Logo -->
+        <!-- Site navigation -->
+        <nav class="site_navigation" role="navigation">
+          <span class="site_navigation_toggle"><i class="fa fa-reorder"></i></span>
+          <ul class="menu">
+            <li><a href="/">Home<div class="subtitle">Frontpage</div></a></li>
+            <li class="menu-item-has-children has_dt_mega_menu"><a href="/">Mega Menu<div class="subtitle">Widget Menu</div></a>
+  <span class="site_sub_menu_toggle"></span>
+  <ul class="dt_mega_menu" jQuery>
+    <li>
+      <!-- Timeline widet -->
+<div class="widget">
+  <div class="widget_title"><h3>Timeline</h3></div>
+  <div class="tb_widget_timeline clearfix">
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/24/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/15/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/15/open-source-license/">各种开源协议简述</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/26/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/26/spring-restful-webservice/">spring,cxf,restful发布webservice传递List,Map,List<Map></a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/21/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/21/springmvn-export-excel/">springmvc导出excel并弹出下载框</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">07/11/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/07/11/jvmclassloading/">JVM类加载机制</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">06/12/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/06/12/gitsubmit/">使用git更新博文</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+  </div>
+</div><!-- End Timeline widet -->
+
+      <!-- Recent posts -->
+<div class="widget">
+  <div class="widget_title"><h3>Recent posts</h3></div>
+  <div class="tb_widget_recent_list clearfix">
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/26/deep-learning/">深度学习笔记</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 26, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/26/deep-learning/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/19/java8-lambda/">Java 8 lambda表达式介绍</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 19, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/19/java8-lambda/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2016/02/01/java8-lambda-demo/">Java 8十个lambda表达式案例</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Feb 1, 2016</span>
+            <span class="meta_author"><a href="/study/2016/02/01/java8-lambda-demo/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <h4><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h4>
+        <div class="item_meta clearfix">
+            <span class="meta_date">Dec 24, 2015</span>
+            <span class="meta_author"><a href="/study/2015/12/24/super-extends/">ruochenxing</a></span>
+        </div>
+      </div>
+    </div><!-- End Post item -->
+    
+  </div>
+</div><!-- End Recent posts -->
+
+      <!-- Category widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Archive</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      
+      <li><a href="/categories/#study">study</a> (12)</li>
+      
+      <li><a href="/categories/#life">life</a> (1)</li>
+      
+    </ul>
+  </div>
+</div><!-- End Category widget -->
+
+    </li>
+  </ul>
+</li>
+
+            <!--<li><a href="/news/">News<div class="subtitle">Interests</div></a></li>-->
+          </ul>
+        </nav><!-- End Site navigation -->
+    </div>
+</div><!-- End Header main -->
+</header><!-- End Header -->
+
+
+      <!-- Section -->
+      <section>
+        <div class="container"><!-- container -->
+          <div class="row"><!--  row -->
+            <!-- Main content -->
+            <div class="col col_9_of_12">
+              <div class="panel_title">
+  <div>
+    <h4><a href="about_me">关于我</a></h4>
+  </div>
+  <span>爱好一望无际.....</span>
+</div>
+
+<div class="row">
+  <div class="col col_12_of_12">
+    <div class="list_posts_1">
+        <div class="item clearfix">
+          <div class="item_content">
+            <h4><span class="format">邮箱</span></h4>
+            <p>sherlock_65535#qq.com</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel_title">
+  <div>
+    <h4><a href="address">联系我</a></h4>
+  </div>
+  <span></span>
+</div>
+
+<div class="row">
+  <div class="col col_12_of_12">
+    <div class="list_posts_1">
+        <div class="item clearfix">
+          <div class="item_content">
+            <h4><span class="format">地址</span></h4>
+            <p>深圳南山</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel_title">
+  <div>
+    <h4><a href="address">工作</a></h4>
+  </div>
+  <span>java程序员</span>
+</div>
+
+<div class="row">
+  <div class="col col_12_of_12">
+    <div class="list_posts_1">
+        <div class="item clearfix">
+          <div class="item_content">
+            <h4><span class="format">简历</span></h4>
+            <p>工作中.....</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+            </div><!-- Main content End -->
+            <!-- Sidebar -->
+<div class="col col_3_of_12">
+  <!-- Widget Search widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Search widget</h3></div>
+  <div class="tb_widget_search">
+    <form action="/search/" target="_blank" method="get">
+      <input type="text" name=q size=40 placeholder="Search in site...">
+      <input type="submit" value="Search">
+    </form>
+  </div>
+</div>
+<!-- End Widget Search widget -->
+  <!-- Widget timeline -->
+<div class="widget">
+  <div class="widget_title"><h3>Timeline</h3></div>
+  <div class="tb_widget_timeline clearfix">
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/24/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/24/super-extends/">泛型中super和extends的区别</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">12/15/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/12/15/open-source-license/">各种开源协议简述</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/26/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/26/spring-restful-webservice/">spring,cxf,restful发布webservice传递List,Map,List<Map></a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">11/21/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/11/21/springmvn-export-excel/">springmvc导出excel并弹出下载框</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">07/11/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/07/11/jvmclassloading/">JVM类加载机制</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">06/12/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/06/12/gitsubmit/">使用git更新博文</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+      <!-- Article -->
+      <article>
+        <span class="date">05/07/2015</span>
+        <span class="time">ruochenxing</span>
+        <div class="timeline_content">
+          <i class="fa fa-clock-o" jQuery></i>
+          <h3><a href="/study/2015/05/07/java-thread/">Java线程相关知识</a></h3>
+        </div>
+      </article><!-- End Article -->
+    
+  </div>
+</div><!-- End Widget timeline -->
+
+  <!-- Friendly Links -->
+<div class="widget">
+  <div class="widget_title"><h3>Friendly Links</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      <li><a href="https://github.com/ruochenxing" target="_blank">GitHub</a> <i class="fa"></i></li>
+      <li><a href="http://www.zhihu.com/people/ruo-chen-xing" target="_blank">知乎</a> <i class="fa"></i></li>
+      <li><a href="http://my.oschina.net/aptx4869" target="_blank">开源中国</a> <i class="fa"></i></li>
+    </ul>
+  </div>
+</div>
+<!-- End Friendly Links  -->
+</div><!-- End Sidebar -->
+          </div><!-- end row -->
+        </div><!-- end container -->
+      </section><!-- Section End -->
+      <!-- Footer -->
+<footer id="footer">
+<div class="container">
+  <div class="row">
+    <div class="col col_3_of_12">
+      <!-- Widget Text widget -->
+      <div class="widget">
+        <div class="widget_title"><h3>Bloginfo</h3></div>
+        <p>This personal blog was powered by Jekyll.fork from github.com/flinhong/flinhong.github.io</p>
+      </div>
+      <!-- End Widget text widget -->
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Widget Recent Posts-->
+<div class="widget">
+<div class="widget_title"><h3>Recent posts</h3></div>
+<div class="tb_widget_top_rated clearfix">
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 26, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/26/deep-learning/">深度学习笔记</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 19, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/19/java8-lambda/">Java 8 lambda表达式介绍</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+    <!-- Post item -->
+    <div class="item clearfix">
+      <div class="item_content">
+        <div class="item_meta clearfix">
+          <span class="meta_date">Feb 1, 2016</span>
+        </div>
+        <h4><a href="/study/2016/02/01/java8-lambda-demo/">Java 8十个lambda表达式案例</a></h4>
+      </div>
+      <div class="order">&#9812;</div>
+    </div><!-- End Post item -->
+  
+</div>
+</div><!-- End Widget recent posts -->
+
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Widget Social widget -->
+<div class="widget">
+  <div class="widget_title"><h3>Socialize</h3></div>
+  <div class="tb_widget_socialize clearfix">
+    <a href="http://weibo.com/vaeconan" target="_blank" class="icon google">
+      <div class="symbol"><i class="fa fa-weibo"></i></div>
+      <div class="text"><p>微博</p><p>@若晨星</p></div>
+    </a>
+  </div>
+</div>
+<!-- End Widget Social widget -->
+    </div>
+    <div class="col col_3_of_12">
+      <!-- Friendly Links -->
+<div class="widget">
+  <div class="widget_title"><h3>Friendly Links</h3></div>
+  <div class="tb_widget_categories">
+    <ul>
+      <li><a href="https://github.com/ruochenxing" target="_blank">GitHub</a> <i class="fa"></i></li>
+      <li><a href="http://www.zhihu.com/people/ruo-chen-xing" target="_blank">知乎</a> <i class="fa"></i></li>
+      <li><a href="http://my.oschina.net/aptx4869" target="_blank">开源中国</a> <i class="fa"></i></li>
+    </ul>
+  </div>
+</div>
+<!-- End Friendly Links  -->
+    </div>
+  </div>
+</div>
+</footer><!-- End Footer -->
+<a href="#top" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+    </div><!-- Wrapper End -->
+    <!-- Scripts -->
+<script type="text/javascript" src="/js/jqueryscript.min.js"></script>
+<script type="text/javascript" src="/js/jqueryuiscript.min.js"></script>
+<script type="text/javascript" src="/js/easing.min.js"></script>
+<script type="text/javascript" src="/js/smoothscroll.min.js"></script>
+<script type="text/javascript" src="/js/magnific.min.js"></script>
+<script type="text/javascript" src="/js/bxslider.min.js"></script>
+<script type="text/javascript" src="/js/fitvids.min.js"></script>
+<script type="text/javascript" src="/js/viewportchecker.min.js"></script>
+<script type="text/javascript" src="/js/init.js"></script>  
+
+  </body>
+</html>
