@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>研磨时光</title>
+    <description>This personal blog was powered by Jekyll.fork from github.com/flinhong/flinhong.github.io</description>
+    <link>http://ruochenxing.github.io/</link>
+    <atom:link href="http://ruochenxing.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Tue, 19 Apr 2016 10:37:02 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Apr 2016 10:37:02 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>深度学习笔记</title>
+        <description>&lt;h3 id=&quot;id-section&quot;&gt;注意&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;不要在舒适区练习。也就是如果你俯卧撑能做100个，那么每次做50个，都是你的舒适区，
+是没有任何效果的。&lt;/li&gt;
+  &lt;li&gt;不要在恐慌区练习。初学吉他的，上来扫几个和弦还行，直接学solo一段加州旅馆肯定会挂。同样没有任何效果。&lt;/li&gt;
+  &lt;li&gt;要在学习区练习。学习区就是舒适区之外，恐慌区之内的部分。
+即你踮脚使劲伸手，是能够到的高度，有难度，但是是可实现的。&lt;/li&gt;
+  &lt;li&gt;要有反馈。如果你没有足够好的教练来对你的练习进行指导和反馈，那么也是不行的。这也是为什么自学是那么的难。因为你得同时扮演练习者和教练两个角色。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;id-section-1&quot;&gt;以问题导向&lt;/h3&gt;
+&lt;p&gt;对于我们平常的学习方式（非问题导向的学习过程）&lt;/p&gt;
+
+&lt;p&gt;通常来说，我们打算学习一个新知识总是先订立学习计划，比如多少天背多少个单词，然后实施学习，最后再复习一下。但是在这个学习过程中，大多数的我们扮演的只是一个吸纳者或者搬运者的角色，换句话说，我们只是单纯的把某个知识集合经过一定的消化和组织搬运到了自己的大脑中。这种方式就存在一个问题，对于我们学到的知识，它只是存放在那里，学习者依旧不知道怎么用，学习者只是又积累了好多的资料，然后安慰自己说，未来的某一天我总会用上它们？［书签，mark］&lt;/p&gt;
+
+&lt;p&gt;这就是教育心理学中的直接传递模式。他们认为，更合理的模式应该是［构建主义］，学习者的知识不是简单地吸收而来，而是主动地构建而来，学习者必须充分地调用他们已有的知识，在一个主动性目标的指引下，在一个丰富的情境中，去探索甚至撞击那些新接触到的知识，在经过一系列复杂的交互之后，把这些知识纳入到原有的知识体系中。&lt;/p&gt;
+
+&lt;p&gt;因此，人们总结出了一种新的学习方式，以问题导向学习。但这跟语文老师说的带着问题去阅读全文是不一样的。第一：提问不是空中阁楼式的，而是基于现在你已掌握的知识。第二：在学习的过程中，我们对已有的知识，新学习的知识的梳理和反思特别重要。&lt;/p&gt;
+
+&lt;p&gt;那么，在学习的过程中，我们该怎么提出自己的问题呢？针对当前学习材料，总结有以下四点，&lt;/p&gt;
+
+&lt;p&gt;1）我已具备哪些相关知识&lt;/p&gt;
+
+&lt;p&gt;2）新学到了哪些知识&lt;/p&gt;
+
+&lt;p&gt;3）有哪些未知的东西可以简单的搜索就能知晓&lt;/p&gt;
+
+&lt;p&gt;4）有哪些位置的东西需要长期的探索&lt;/p&gt;
+
+&lt;p&gt;问题可以引导我们进入涉入更广，更深的领域，我们不再是被告知去学习什么东西，而是去探索寻找知识，寻找构筑我们答案的材料。在这个问题引导下的学习最大的特点是，它所希求的知识是没有边界的，为了找到问题的解，我们可能会寻访任何可能的线索，查询任何可能的有益资料，而不受既定的观点的约束。［刘未鹏 暗时间］&lt;/p&gt;
+
+&lt;h3 id=&quot;id-section-2&quot;&gt;解码&lt;/h3&gt;
+
+&lt;p&gt;对于知识的掌握：包含了解和知晓两个层次。&lt;/p&gt;
+
+&lt;p&gt;了解，了解它说了什么？&lt;/p&gt;
+
+&lt;p&gt;知晓，知晓它是什么？它是怎么实现的？&lt;/p&gt;
+
+&lt;p&gt;这就叫解码。&lt;/p&gt;
+
+&lt;p&gt;掌握解码有三条有效的途径：&lt;/p&gt;
+
+&lt;p&gt;一，不只是去寻结论，还要去寻过程，既我们不仅要知道结果是什么，还要去知道，这个结果如何得来的。&lt;/p&gt;
+
+&lt;p&gt;二，不只要做归纳，还要做延展。如果我们把一本经典之作的某句经典的话延展到另一个情境中，是否仍然适用呢？&lt;/p&gt;
+
+&lt;p&gt;三，不只要比较相似，还要比较不同，不同才有知识，才有新意，才有新发现。正是例外变的重要起来。我们不去寻求相似；我们尤其要全力找出差别，在差别中我们首先应该选择最受强调的东西，这不仅因为它们最引人瞩目，而是因为它们最富有启发性。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-section-3&quot;&gt;操练：&lt;/h3&gt;
+
+&lt;p&gt;我们常常会有这么一种感觉，为什么学起游戏来的这么轻而易举，而学习教科书则反之呢？答案是因为游戏是一种典型的操练式学习，游戏中显性的游戏规则和操作技巧等知识可以通过完成一系列新手任务来学会。除此之外，游戏中的操练还有以下三个特点：&lt;/p&gt;
+
+&lt;p&gt;1.提供即时和丰富的反馈。&lt;/p&gt;
+
+&lt;p&gt;2.营造动态和多变的情境&lt;/p&gt;
+
+&lt;p&gt;3.适度的挑战性构成对学习的激励&lt;/p&gt;
+
+&lt;p&gt;为什么操练重要，因为你记住了多少知识并不代表你掌握了多少知识，而你能调用多少知识才代表了你掌握了多少知识，知识不像硬盘文字里的复制粘贴。&lt;/p&gt;
+
+&lt;h5 id=&quot;id-section-4&quot;&gt;一万小时理论&lt;/h5&gt;
+
+&lt;p&gt;最强的证据来自棋类，音乐，体育等［技能性］以及［边界清晰］的领域。对于这些领域，首先要考虑的不是能不能坚持十年，而是能不能很早地进入这些领域&lt;/p&gt;
+
+&lt;p&gt;对于更多的学习者来说，不是我们不愿意联系，不肯坚持，而是根本［无习可练］，如果我们要练打篮球，可以一直投篮做练习，当我们想成为历史学家，除了不停的看书，便无他法。&lt;/p&gt;
+
+&lt;p&gt;于是，对于一个追求学习的人如何在自学时进行知识的操练？&lt;/p&gt;
+
+&lt;p&gt;对于这个问题，你首先得明白操练的重要性，其次你得找机会操练。于是，你可以把知识当作一种技能来学习&lt;/p&gt;
+
+&lt;p&gt;1写作式操练，除了思考，写作带来的一个明显的益处就是获得反馈&lt;/p&gt;
+
+&lt;p&gt;2游戏式操练，这种方式具有相当高的参与性，互动性和投入性&lt;/p&gt;
+
+&lt;p&gt;3设计式操练，设计某一解决方案，来解决某个特定的问题&lt;/p&gt;
+
+&lt;h3 id=&quot;id-section-5&quot;&gt;融合&lt;/h3&gt;
+
+&lt;p&gt;目前我们的教育都是按科目文理进行的，这种方式会让受教育者产生一种分解性的思维，这种思维的要害在于一件事物的整体特征以及各个部分之间的潜在关联都被完全忽视了。因为当你手里只有一把铁锤的时候，看什么都是钉子。将原本独立活着疏远的知识加以融合也是一种高效学习的方式。&lt;/p&gt;
+
+&lt;p&gt;融合的方法有三：迁移，印证和互补&lt;/p&gt;
+
+&lt;p&gt;#####印证&lt;/p&gt;
+
+&lt;p&gt;所谓灵感，所谓潜意识的思考，并非平白无故的产生的。而是有懒于思考者已经拥有了丰富的，充足的，多元的思考材料，潜意识的作用是借助强大的并行计算，把这些思考材料进行各种组合。&lt;/p&gt;
+
+&lt;p&gt;#####互补&lt;/p&gt;
+
+&lt;p&gt;创业的价值在于可测量性和可放大性&lt;/p&gt;
+
+&lt;p&gt;可测量性：和平常工作相比，创业的价值更大，公司则是一种平均化的方式给员工提供报酬，而创业，人们不再是低强度的工作四十年，而是极限工作四年。&lt;/p&gt;
+
+&lt;p&gt;可放大性：个人在公司的贡献不具有可放大性，通常以计时或者机件的方式来获得报酬。而创业之所以能产生价值，是因为它发现一种做事的新方式，它的经济价值就取决于有多少人使用这种新方式。一种新方式可以引起争议，既有肯定的声音也有反对和质疑，这种争论使一种新的颠覆性的观念得以传播，放大，颠覆很多人对艺术的原本理解&lt;/p&gt;
+
+&lt;p&gt;一个小团队用起先进的技术，解决了人们普遍面临的问题，所以创造了价值。像iPhone这样的发明，并不是解决了什么难题，而是让大家惊讶的发现，原来我们和电子产品是可以以这样一种方式来交互的！本质是一种观念的颠覆。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 26 Feb 2016 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2016/02/26/deep-learning/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2016/02/26/deep-learning/</guid>
+        
+        <category>learn</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>Java 8 lambda表达式介绍</title>
+        <description>&lt;p&gt;Java是一门面向对象编程语言。面向对象编程语言和函数式编程语言中的基本元素（Basic Values）都可以动态封装程序行为：
+&lt;code class=&quot;highlighter-rouge&quot;&gt;面向对象编程语言使用带有方法的对象封装行为，函数式编程语言使用函数封装行为。&lt;/code&gt;但这个相同点并不明显，因为Java的对象往往比较“重量级”：实例化一个类型往往会涉及不同的类，并需要初始化类里的字段和方法。于是对于有些Java对象，只是对单个函数的封装。
+下面这个典型用例：Java API中定义了一个接口（一般被称为回调接口），用户通过提供这个接口的实例来传入指定行为，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public interface ActionListener {
+  void actionPerformed(ActionEvent e);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这里并不需要专门定义一个类来实现ActionListener接口，因为它只会在调用处被使用一次。用户一般会使用匿名类型把行为内联（inline）：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;button.addActionListener(new ActionListener) {
+  public void actionPerformed(ActionEvent e) {
+    ui.dazzle(e.getModifiers());
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;显然匿名内部类并不是一个好的选择，其语法过于冗余，匿名类中的this和变量名容易使人产生误解，类型载入和实例创建语义不够灵活，无法捕获非final的局部变量，无法对控制流进行抽象等等等等。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-functional-interfaces&quot;&gt;函数式接口（Functional interfaces）&lt;/h3&gt;
+
+&lt;p&gt;于是java8引入了一个函数式接口的概念。理解Functional Interface（函数式接口，以下简称FI）是学习Java8 Lambda表达式的关键所在，所以放在最开始讨论。FI的定义其实很简单：任何接口，如果只包含唯一一个抽象方法，那么它就是一个FI。&lt;/p&gt;
+
+&lt;p&gt;Java8提供了@FunctionalInterface注解。举个简单的例子，Runnable接口就是一个FI，下面是它的源代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@FunctionalInterface
+public interface Runnable {
+    public abstract void run();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们并不需要额外的工作来声明一个接口是函数式接口：编译器会根据接口的结构自行判断（判断过程并非简单的对接口方法计数：一个接口可能冗余的定义了一个Object已经提供的方法，比如toString()，或者定义了静态方法或默认方法，这些都不属于函数式接口方法的范畴）。不过API作者们可以通过@FunctionalInterface注解来显式指定一个接口是函数式接口（以避免无意声明了一个符合函数式标准的接口），加上这个注解之后，编译器就会验证该接口是否满足函数式接口的要求。&lt;/p&gt;
+
+&lt;p&gt;下面是Java SE 7中已经存在的函数式接口：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;java.lang.Runnable
+java.util.concurrent.Callable
+java.security.PrivilegedAction
+java.util.Comparator
+java.io.FileFilter
+java.beans.PropertyChangeListener
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Java8除了给Runnable，Comparator等接口打上了@FunctionalInterface注解之外，还预定义了一大批新的FI。这些接口都在java.util.function包里，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Predicate&amp;lt;T&amp;gt;——接收T对象并返回boolean
+Consumer&amp;lt;T&amp;gt;——接收T对象，不返回值
+Function&amp;lt;T, R&amp;gt;——接收T对象，返回R对象
+Supplier&amp;lt;T&amp;gt;——提供T对象（例如工厂），不接收值
+UnaryOperator&amp;lt;T&amp;gt;——接收T对象，返回T对象
+BinaryOperator&amp;lt;T&amp;gt;——接收两个T对象，返回T对象
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;下面简单介绍几个：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@FunctionalInterface
+//Predicate用来判断一个对象是否满足某种条件，比如，单词是否由六个以上字母组成：
+public interface Predicate&amp;lt;T&amp;gt; {
+    boolean test(T t);
+}
+words.stream().filter(word -&amp;gt; word.length() &amp;gt; 6).count();
+@FunctionalInterface
+//Function表示接收一个参数，并产生一个结果的函数：
+public interface Function&amp;lt;T, R&amp;gt; {
+    R apply(T t);
+}
+//下面的例子将集合里的每一个整数都乘以2：
+ints.stream().map(x -&amp;gt; x * 2);
+@FunctionalInterface
+//Consumer表示对单个参数进行的操作，前面例子中的forEach()方法接收的参数就是这种操作：
+public interface Consumer&amp;lt;T&amp;gt; {
+    void accept(T t);
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;id-lambdalambda-expressions&quot;&gt;Lambda表达式（lambda expressions）&lt;/h3&gt;
+&lt;p&gt;为了能够方便、快捷、幽雅的创建出FI的实例，Java8提供了Lambda表达式这颗语法糖。下面我用一个例子来介绍Lambda语法。假设我们想对一个List&lt;string&gt;按字符串长度进行排序，那么在Java8之前，可以借助匿名内部类来实现：&lt;/string&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  List&amp;lt;String&amp;gt; words = Arrays.asList(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;);
+  words.sort(new Comparator&amp;lt;String&amp;gt;() {
+    @Override
+    public int compare(String w1, String w2) {
+        return Integer.compare(w1.length(), w2.length());
+    }
+  });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;上面的匿名内部类简直可以用丑陋来形容，唯一的一行逻辑被五行垃圾代码淹没。根据前面的定义（并查看Java源代码）可知，Comparator是个FI，所以，可以用Lambda表达式来实现：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  List&amp;lt;String&amp;gt; words = Arrays.asList(&quot;apple&quot;, &quot;banana&quot;, &quot;pear&quot;);
+  words.sort((String w1, String w2) -&amp;gt; {
+      return Integer.compare(w1.length(), w2.length());
+  });
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;lambda表达式的语法由参数列表、箭头符号-&amp;gt;和函数体组成。函数体既可以是一个表达式，也可以是一个语句块：
+表达式：表达式会被执行然后返回执行结果。
+语句块：语句块中的语句会被依次执行，就像方法中的语句一样——
+    return语句会把控制权交给匿名方法的调用者
+    break和continue只能在循环中使用
+    如果函数体有返回值，那么函数体内部的每一条路径都必须返回值
+表达式函数体适合小型lambda表达式，它消除了return关键字，使得语法更加简洁。
+下面是一些出现在语句中的lambda表达式：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FileFilter java = (File f) -&amp;gt; f.getName().endsWith(&quot;*.java&quot;);
+String user = doPrivileged(() -&amp;gt; System.getProperty(&quot;user.name&quot;));
+new Thread(() -&amp;gt; {
+  connectToService();
+  sendNotification();
+}).start();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;id-target-typing&quot;&gt;目标类型（Target typing）&lt;/h3&gt;
+&lt;p&gt;对于给定的lambda表达式，其类型都由上下文推导而出，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ActionListener l = (ActionEvent e) -&amp;gt; ui.dazzle(e.getModifiers());  //ActionListener的实例
+Callable&amp;lt;String&amp;gt; c = () -&amp;gt; &quot;done&quot;;                  //Callable的实例
+PrivilegedAction&amp;lt;String&amp;gt; a = () -&amp;gt; &quot;done&quot;;              //PrivilegedAction的实例
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;lambda表达式对目标类型也是有要求的。编译器会检查lambda表达式的类型和目标类型的方法签名（method signature）是否一致。当且仅当下面所有条件均满足时，lambda表达式才可以被赋给目标类型T：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;T是一个函数式接口&lt;/li&gt;
+  &lt;li&gt;lambda表达式的参数和T的方法参数在数量和类型上一一对应&lt;/li&gt;
+  &lt;li&gt;lambda表达式的返回值和T的方法返回值相兼容（Compatible）&lt;/li&gt;
+  &lt;li&gt;lambda表达式内所抛出的异常和T的方法throws类型相兼容&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;并且lambda表达式的参数类型可以从目标类型中得出&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Comparator&amp;lt;String&amp;gt; c = (s1, s2) -&amp;gt; s1.compareToIgnoreCase(s2);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在上面的例子里，编译器可以推导出s1和s2的类型是String。此外，当lambda的参数只有一个而且它的类型可以被推导得知时，该参数列表外面的括号可以被省略：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FileFilter java = f -&amp;gt; f.getName().endsWith(&quot;.java&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;id-method-references&quot;&gt;方法引用（Method References）&lt;/h3&gt;
+
+&lt;p&gt;有时候Lambda表达式的代码就只是一个简单的方法调用而已，遇到这种情况，Lambda表达式还可以进一步简化为 方法引用（Method References） 。一共有四种形式的方法引用，第一种引用 静态方法 ，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;Integer&amp;gt; ints = Arrays.asList(1, 2, 3);
+ints.sort(Integer::compare);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第二种引用 某个特定对象的实例方法
+，例如前面那个遍历并打印每一个word的例子可以写成这样：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;words.forEach(System.out::println);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第三种引用 某个类的实例方法，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;words.stream().map(word -&amp;gt; word.length()); // lambda
+words.stream().map(String::length); // method reference
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第四种引用类的 构造函数 ，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// lambda
+words.stream().map(word -&amp;gt; {
+    return new StringBuilder(word);
+});
+// constructor reference
+words.stream().map(StringBuilder::new);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;id-section&quot;&gt;总结&lt;/h3&gt;
+
+&lt;p&gt;我们在设计lambda时的一个重要目标就是新增的语言特性和库特性能够无缝结合（designed to work together）。接下来，我们通过一个实际例子（按照姓对名字列表进行排序）来演示这一点：
+比如说下面的代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;List&amp;lt;Person&amp;gt; people = ...
+Collections.sort(people, new Comparator&amp;lt;Person&amp;gt;() {
+  public int compare(Person x, Person y) {
+    return x.getLastName().compareTo(y.getLastName());
+  }
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;冗余代码实在太多了！有了lambda表达式，我们可以去掉冗余的匿名类：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Collections.sort(people,
+                 (Person x, Person y) -&amp;gt; x.getLastName().compareTo(y.getLastName()));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;尽管代码简洁了很多，但它的抽象程度依然很差：开发者仍然需要进行实际的比较操作（而且如果比较的值是原始类型那么情况会更糟），所以我们要借助Comparator里的comparing方法实现比较操作：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Collections.sort(people, Comparator.comparing((Person p) -&amp;gt; p.getLastName()));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在类型推导和静态导入的帮助下，我们可以进一步简化上面的代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Collections.sort(people, comparing(p -&amp;gt; p.getLastName()));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;我们注意到这里的lambda表达式实际上是getLastName的代理（forwarder），于是我们可以用方法引用代替它：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Collections.sort(people, comparing(Person::getLastName));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;最后，使用Collections.sort这样的辅助方法并不是一个好主意：它不但使代码变的冗余，也无法为实现List接口的数据结构提供特定（specialized）的高效实现，而且由于Collections.sort方法不属于List接口，用户在阅读List接口的文档时不会察觉在另外的Collections类中还有一个针对List接口的排序（sort()）方法。
+默认方法可以有效的解决这个问题，我们为List增加默认方法sort()，然后就可以这样调用：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;people.sort(comparing(Person::getLastName));;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;此外，如果我们为Comparator接口增加一个默认方法reversed()（产生一个逆序比较器），我们就可以非常容易的在前面代码的基础上实现降序排序。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;people.sort(comparing(Person::getLastName).reversed());;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 19 Feb 2016 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2016/02/19/java8-lambda/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2016/02/19/java8-lambda/</guid>
+        
+        <category>java</category>
+        
+        <category>lambda</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>Java 8十个lambda表达式案例</title>
+        <description>&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+package java8demo;
+
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+import javax.swing.JButton;
+
+public class Java8LambdaDemo {
+
+	/**
+	 * 使用() -&amp;gt; {} 替代匿名类：
+	 */
+	public static void test1() {
+		new Thread(() -&amp;gt; System.out.println(&quot;In Java8!&quot;)).start();
+	}
+
+	/**
+	 * 实现事件处理 使用Lambda表达式替代匿名类
+	 */
+	public static void test2() {
+		JButton show = new JButton(&quot;Show&quot;);
+		show.addActionListener(e -&amp;gt; {
+			System.out.println(&quot;Action!!Lambda expressions Rocks&quot;);
+		});
+	}
+
+	/**
+	 * 使用Lambda表达式遍历List集合
+	 */
+	public static void test3() {
+		List&amp;lt;String&amp;gt; features = Arrays.asList(&quot;HEHE&quot;, &quot;HAHA&quot;);
+		features.forEach(s -&amp;gt; System.out.println(s));
+		features.forEach(System.out::println);
+	}
+
+	/**
+	 * 使用Lambda表达式和函数接口
+	 * 
+	 */
+	public static void test4() {
+		List&amp;lt;String&amp;gt; languages = Arrays.asList(&quot;Java&quot;, &quot;C++&quot;, &quot;C&quot;, &quot;Php&quot;, &quot;Lisp&quot;);
+		test4_filter2(languages, str -&amp;gt; str.length() &amp;gt;= 4);
+	}
+
+	/**
+	 * 为了支持函数编程，Java 8加入了一个新的包java.util.function，其中有一个接口java.util.function.
+	 * Predicate是支持Lambda函数编程：
+	 */
+	public static void test4_filter1(List&amp;lt;String&amp;gt; languages, Predicate&amp;lt;String&amp;gt; predicate) {
+		for (String language : languages) {
+			if (predicate.test(language)) {
+				System.out.println(language + &quot; &quot;);
+			}
+		}
+	}
+
+	/**
+	 * Stream API 的filter方法能够接受 Predicate参数
+	 */
+	public static void test4_filter2(List&amp;lt;String&amp;gt; languages, Predicate&amp;lt;String&amp;gt; predicate) {
+		languages.stream().filter(language -&amp;gt; predicate.test(language))
+				.forEach(language -&amp;gt; System.out.println(language + &quot; &quot;));
+	}
+
+	/**
+	 * java.util.function.Predicate提供and(), or() 和 xor()可以进行逻辑操作
+	 */
+	public static void test5() {
+		List&amp;lt;String&amp;gt; languages = Arrays.asList(&quot;Java&quot;, &quot;C++&quot;, &quot;C&quot;, &quot;Php&quot;, &quot;Lisp&quot;, &quot;Javascript&quot;);
+		Predicate&amp;lt;String&amp;gt; startsWithJ = language -&amp;gt; language.startsWith(&quot;J&quot;);
+		Predicate&amp;lt;String&amp;gt; fourLetterLong = language -&amp;gt; language.length() == 4;
+		languages.stream().filter(startsWithJ.and(fourLetterLong)).forEach(language -&amp;gt; System.out.println(language));
+	}
+
+	/**
+	 * Lambda实现Map 和 Reduce
+	 */
+	public static void test6() {
+		List&amp;lt;Integer&amp;gt; costBeforeTax = Arrays.asList(100, 200, 300, 400, 500);
+		costBeforeTax.stream().map((cost) -&amp;gt; cost + 0.12 * cost).forEach(System.out::println);
+		double bill = costBeforeTax.stream().map(cost -&amp;gt; cost + 0.12 * cost).reduce((sum, cost) -&amp;gt; sum + cost).get();
+		System.out.println(bill);
+	}
+
+	/**
+	 * Filtering是对大型Collection操作的一个通用操作，Stream提供filter()方法，接受一个Predicate对象，
+	 * 意味着你能传送lambda表达式作为一个过滤逻辑进入这个方法：
+	 */
+	public static void test7() {
+		List&amp;lt;String&amp;gt; languages = Arrays.asList(&quot;Java&quot;, &quot;C++&quot;, &quot;C&quot;, &quot;Php&quot;, &quot;Lisp&quot;, &quot;Javascript&quot;);
+		List&amp;lt;String&amp;gt; filtered = languages.stream().filter(x -&amp;gt; x.length() &amp;gt; 2).collect(Collectors.toList());
+		System.out.printf(&quot;Original List : %s, filtered list : %s %n&quot;, languages, filtered);
+	}
+
+	/**
+	 * 对集合中元素运用一定的功能，如表中的每个元素乘以或除以一个值等等.
+	 */
+	public static void test8() {
+		List&amp;lt;String&amp;gt; G7 = Arrays.asList(&quot;USA&quot;, &quot;Japan&quot;, &quot;France&quot;, &quot;Germany&quot;, &quot;Italy&quot;, &quot;U.K.&quot;, &quot;Canada&quot;);
+		String G7Countries = G7.stream().map(x -&amp;gt; x.toUpperCase()).collect(Collectors.joining(&quot;,&quot;));
+		System.out.println(G7Countries);
+	}
+
+	/**
+	 * 使用Stream的distinct()方法过滤集合中重复元素。
+	 */
+	public static void test9() {
+		List&amp;lt;Integer&amp;gt; numbers = Arrays.asList(9, 10, 3, 4, 7, 3, 4);
+		List&amp;lt;Integer&amp;gt; distinct = numbers.stream().map(i -&amp;gt; i * i).distinct().collect(Collectors.toList());
+		System.out.printf(&quot;Original List : %s,  Square Without duplicates : %s %n&quot;, numbers, distinct);
+	}
+
+	/**
+	 * 计算List中的元素的最大值，最小值，总和及平均值
+	 */
+	public static void test10() {
+		List&amp;lt;Integer&amp;gt; primes = Arrays.asList(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
+		IntSummaryStatistics stats = primes.stream().mapToInt((x) -&amp;gt; x).summaryStatistics();
+		System.out.println(&quot;最大值: &quot; + stats.getMax());
+		System.out.println(&quot;最小值: &quot; + stats.getMin());
+		System.out.println(&quot;总和: &quot; + stats.getSum());
+		System.out.println(&quot;均值: &quot; + stats.getAverage());
+	}
+
+	public static void main(String[] args) {
+		test10();
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2016/02/01/java8-lambda-demo/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2016/02/01/java8-lambda-demo/</guid>
+        
+        <category>java</category>
+        
+        <category>lambda</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>泛型中super和extends的区别</title>
+        <description>&lt;h2 id=&quot;id-extends&quot;&gt;extends&lt;/h2&gt;
+
+&lt;p&gt;List &amp;lt; ?extends Number &amp;gt; foo3的通配符声明，意味着以下的赋值是合法的：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Number &quot;extends&quot; Number (in this context)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Integer extends Number&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Double extends Number&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Double&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;读取操作通过以上给定的赋值语句，你一定能从foo3列表中读取到的元素的类型是什么呢？你可以读取到Number，因为以上的列表要么包含Number元素，要么包含Number的类元素。你不能保证读取到Integer，因为foo3可能指向的是List &amp;lt; Double &amp;gt; 。你不能保证读取到Double，因为foo3可能指向的是List &amp;lt; Integer &amp;gt; 。&lt;/li&gt;
+  &lt;li&gt;写入操作过以上给定的赋值语句，你能把一个什么类型的元素合法地插入到foo3中呢？你不能插入一个Integer元素，因为foo3可能指向List &amp;lt; Double &amp;gt; 。你不能插入一个Double元素，因为foo3可能指向List &amp;lt; Integer &amp;gt; 。你不能插入一个Number元素，因为foo3可能指向List &amp;lt; Integer &amp;gt; 。你不能往List &amp;lt; ?extends T &amp;gt; 中插入任何类型的对象，因为你不能保证列表实际指向的类型是什么，你并不能保证列表中实际存储什么类型的对象。唯一可以保证的是，你可以从中读取到T或者T的子类。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;id-super&quot;&gt;super&lt;/h2&gt;
+
+&lt;p&gt;现在考虑一下List &amp;lt; ?super T &amp;gt; 。List &amp;lt; ?super Integer &amp;gt; foo3的通配符声明，意味着以下赋值是合法的：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Integer is a &quot;superclass&quot; of Integer (in this context)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Number is a superclass of Integer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// Object is a superclass of Integer&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;super&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;读取操作通过以上给定的赋值语句，你一定能从foo3列表中读取到的元素的类型是什么呢？你不能保证读取到Integer，因为foo3可能指向List &amp;lt; Number &amp;gt; 或者List &amp;lt; Object &amp;gt; 。你不能保证读取到Number，因为foo3可能指向List &amp;lt; Object &amp;gt; 。唯一可以保证的是，你可以读取到Object或者Object子类的对象（你并不知道具体的子类是什么）。&lt;/li&gt;
+  &lt;li&gt;写入操作通过以上给定的赋值语句，你能把一个什么类型的元素合法地插入到foo3中呢？你可以插入Integer对象，因为上述声明的列表都支持Integer。你可以插入Integer的子类的对象，因为Integer的子类同时也是Integer，原因同上。你不能插入Double对象，因为foo3可能指向ArrayList &amp;lt; Integer &amp;gt; 。你不能插入Number对象，因为foo3可能指向ArrayList &amp;lt; Integer &amp;gt; 。你不能插入Object对象，因为foo3可能指向ArrayList &amp;lt; Integer &amp;gt; 。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;id-pecs&quot;&gt;PECS&lt;/h2&gt;
+
+&lt;p&gt;请记住PECS原则：生产者（Producer）使用extends，消费者（Consumer）使用super。&lt;/p&gt;
+
+&lt;h5 id=&quot;id-extends-1&quot;&gt;生产者使用extends&lt;/h5&gt;
+
+&lt;p&gt;如果你需要一个列表提供T类型的元素（即你想从列表中读取T类型的元素），你需要把这个列表声明成 &amp;lt; ?extends T &amp;gt; ，比如List &amp;lt; ?extends Integer &amp;gt; ，因此你不能往该列表中添加任何元素。&lt;/p&gt;
+
+&lt;h5 id=&quot;id-super-1&quot;&gt;消费者使用super&lt;/h5&gt;
+
+&lt;p&gt;如果需要一个列表使用T类型的元素（即你想把T类型的元素加入到列表中），你需要把这个列表声明成 &amp;lt; ?super T &amp;gt; ，比如List &amp;lt; ?super Integer &amp;gt; ，因此你不能保证从中读取到的元素的类型。&lt;/p&gt;
+
+&lt;h5 id=&quot;id-section&quot;&gt;即是生产者，也是消费者&lt;/h5&gt;
+
+&lt;p&gt;如果一个列表即要生产，又要消费，你不能使用泛型通配符声明列表，比如List &amp;lt; Integer &amp;gt; 。&lt;/p&gt;
+
+&lt;h2 id=&quot;id-section-1&quot;&gt;例子&lt;/h2&gt;
+
+&lt;p&gt;请参考java.util.Collections里的copy方法 (JDK1.7)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 24 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/12/24/super-extends/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/12/24/super-extends/</guid>
+        
+        <category>generics</category>
+        
+        <category>java</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>各种开源协议简述</title>
+        <description>&lt;h2 id=&quot;id-section&quot;&gt;开源协议的种类&lt;/h2&gt;
+
+&lt;p&gt;现今存在的开源协议很多，而经过Open Source Initiative 组织通过批准的开源协议目前有60多种http://www.opensource.org/licenses/alphabetical。我们在常见的开源协议如BSD, GPL, LGPL,MIT等都是OSI批准的协议。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-apache-license-20apache-20&quot;&gt;Apache License, 2.0(Apache-2.0)&lt;/h3&gt;
+
+&lt;p&gt;Apache Lience允许使用者修改和重新发布代码(以其他协议形式)，允许闭源商业发布和销售。
+Apache Lience鼓励代码共享和尊重原作者的著作权。
+使用Apache Licence协议，需要遵守以下规则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;需要给代码的用户一份Apache Lience；&lt;/li&gt;
+  &lt;li&gt;如果你修改了代码，需要在被修改的文件中说明；&lt;/li&gt;
+  &lt;li&gt;在延伸的代码中（修改或衍生的代码）需要带有原来代码中的协议、商标、专利声明和其他原来作者规定需要包含的说明。&lt;/li&gt;
+  &lt;li&gt;如果再发布的产品中包含了Notice文件，则需要在Notice文件中带有Apache Lience。你可以在Notice中增加自己的许可，但不可以表现为对Apache Lience构成更改。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;除了这些条件它还有这些好处：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;永久权利 一旦被授权，永久拥有。&lt;/li&gt;
+  &lt;li&gt;全球范围的权利 在一个国家获得授权，适用于所有国家。假如你在美国，许可是从印度授权的，也没有问题。&lt;/li&gt;
+  &lt;li&gt;授权免费 无版税， 前期、后期均无任何费用。&lt;/li&gt;
+  &lt;li&gt;授权无排他性 任何人都可以获得授权&lt;/li&gt;
+  &lt;li&gt;授权不可撤消，一旦获得授权，没有任何人可以取消。比如，你基于该产品代码开发了衍生产品，你不用担心会在某一天被禁止使用该代码&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用apache Licence vesion 2.0协议的开源软件有：Hadoop 、apache httpserver、Spring Framework、MongoDB 。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-gpl-gnu-general-public-license&quot;&gt;GPL (GNU General Public License)&lt;/h3&gt;
+
+&lt;p&gt;它的主要内容为：只要在一个软件中使用(“使用”指类库引用或者修改后的代码) GPL 协议的产品，则该软件产品必须也采用GPL协议，既必须也是开源和免费。这个协议就不太适合商用软件，或者准备使用GPL开源组件的商用项目。基于这个协议的项目，极大的提高了开源软件的数量。
+使用GPL协议，需要遵守以下规则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;确保软件自始至终都以开放源代码形式发布，保护开发成果不被窃取用作商业发售。任何一套软 件，只要其中使用了受 GPL 协议保护的第三方软件的源程序，并向非开发人员发布时，软件本身也就自动成为受 GPL 保护并且约束的实体。也就是说，此时它必须开放源代码。&lt;/li&gt;
+  &lt;li&gt;GPL 大致就是一个左侧版权（Copyleft，或译为“反版权”、“版权属左”、“版权所无”、“版责”等）的体现。你可以去掉所有原作的版权 信息，只要你保持开源，并且随源代码、二进制版附上 GPL 的许可证就行，让后人可以很明确地得知此软件的授权信息。GPL 精髓就是，只要使软件在完整开源 的情况下，尽可能使使用者得到自由发挥的空间，使软件得到更快更好的发展。&lt;/li&gt;
+  &lt;li&gt;无论软件以何种形式发布，都必须同时附上源代码。例如在 Web 上提供下载，就必须在二进制版本（如果有的话）下载的同一个页面，清楚地提供源代码下载的链接。如果以光盘形式发布，就必须同时附上源文件的光盘。&lt;/li&gt;
+  &lt;li&gt;开发或维护遵循 GPL 协议开发的软件的公司或个人，可以对使用者收取一定的服务费用。但还是一句老话——必须无偿提供软件的完整源代码，不得将源代码与服务做捆绑或任何变相捆绑销售。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;目前用的多的是GPLV1，GPLV2。这两个什么区别看后面那张树形图。采用这个协议的开源软件有：Linux、 MySQL。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-lgpl-gnu-library-or-lesser-general-public-license&quot;&gt;LGPL (GNU Library or “Lesser” General Public License)&lt;/h3&gt;
+
+&lt;p&gt;由于GPL太严格，限制了很多商用软件使用GPL组件才推出了这个LGPL。LGPL允许商业软件通过引用类库的方式使用LGPL组件（不直接使用源代码），这样可以不需要开源商业软件的代码。但是如果要修改原始组件的代码，则涉及修改部分的代码和基于原来代码衍生的代码都必须采用LGPL协议。LGPL不适合以LGPL协议为基础的代码进行二次开发的商业软件，但是商用软件可以采用编译后的类库引用就不需要公开源代码了。
+采用这个协议的开源软件有： JBoss、 FCKeditor 、 Hibernate。之前extjs就因为从LGPL转换到GPL带来了不少的震动。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-bsdberkerley-software-distribution&quot;&gt;BSD开源协议(Berkerley Software Distribution)&lt;/h3&gt;
+
+&lt;p&gt;目前分为BSD 3-Clause和BSD 2-Clause。顾名思义，3-Clause包含3个条款，2-Clause只有两个。
+这个协议相对上面两个协议宽松很多，允许使用者修改和重新发布代码，也允许使用或在BSD代码基础上开发商业软件发布和销售，因此是适用于商业软件的。
+=使用者别太高兴，使用时还必须做到满足三个条件（2-Clause则不带第3条）：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果再发布的产品中包含源代码，则在源代码中必须带有原来代码中的BSD协议。&lt;/li&gt;
+  &lt;li&gt;如果再发布的只是二进制类库/软件，则需要在类库/软件的文档和版权声明中包含原来代码中的BSD协议。&lt;/li&gt;
+  &lt;li&gt;不可以用开源代码的作者/机构名字和原来产品的名字做市场推广。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;适用BSD协议的开源软件有： nginx、CruiseControl、Redis。
+要点：商业软件可以使用，也可以修改使用BSD协议的代码。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-mit-mit-license&quot;&gt;MIT (MIT license)&lt;/h3&gt;
+
+&lt;p&gt;源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称X11协议。MIT与BSD类似，但是比BSD协议更加宽松，是目前最少限制的协议。这个协议唯一的条件就是在修改后的代码或者发行包包含原作者的许可信息。适用商业软件。使用MIT的软件项目有：jquery、Node.js。
+要点：商业软件可以使用，也可以修改MIT协议的代码，甚至可以出售MIT协议的代码。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-mpl-mozilla-public-license-11&quot;&gt;MPL (Mozilla Public License 1.1)&lt;/h3&gt;
+
+&lt;p&gt;MPL协议允许免费重发布、免费修改，但要求修改后的代码版权归软件的发起者 。这种授权维护了商业软件的利益，它要求基于这种软件的修改无偿贡献版权给该软件。这样，围绕该软件的所有代码的版权都集中在发起开发人的手中。但MPL是允许修改，无偿使用得。MPL软件对链接没有要求。
+要点：商业软件可以使用，也可以修改MPL协议的代码，但修改后的代码版权归软件的发起者。&lt;/p&gt;
+
+&lt;h3 id=&quot;id-epl-eclipse-public-license-10&quot;&gt;EPL (Eclipse Public License 1.0)&lt;/h3&gt;
+
+&lt;p&gt;EPL允许Recipients任意使用、复制、分发、传播、展示、修改以及改后闭源的二次商业发布。&lt;/p&gt;
+
+&lt;p&gt;使用EPL协议，需要遵守以下规则：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;当一个Contributors将源码的整体或部分再次开源发布的时候,必须继续遵循EPL开源协议来发布,而不能改用其他协议发布.除非你得到了原“源码”Owner 的授权；&lt;/li&gt;
+  &lt;li&gt;EPL协议下,你可以将源码不做任何修改来商业发布.但如果你要发布修改后的源码,或者当你再发布的是Object Code的时候,你必须声明它的Source Code是可以获取的,而且要告知获取方法；&lt;/li&gt;
+  &lt;li&gt;当你需要将EPL下的源码作为一部分跟其他私有的源码混和着成为一个Project发布的时候,你可以将整个Project/Product以私人的协议发布,但要声明哪一部分代码是EPL下的,而且声明那部分代码继续遵循EPL；&lt;/li&gt;
+  &lt;li&gt;独立的模块(Separate Module),不需要开源。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;要点：商业软件可以使用，也可以修改EPL协议的代码，但要承担代码产生的侵权责任。&lt;/p&gt;
+
+&lt;h2 id=&quot;id-section-1&quot;&gt;协议的区别&lt;/h2&gt;
+
+&lt;p&gt;下面的树形图很好阐述了当前主流许可协议的区别:
+&lt;img src=&quot;http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cnopensource.png&quot; alt=&quot;opensource1&quot; /&gt;
+&lt;img src=&quot;http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cnopensource3.jpg&quot; alt=&quot;opensource2&quot; /&gt;
+这里是目前github上项目采用的开源协议的比例分布：
+&lt;img src=&quot;http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cnopensource2.jpg&quot; alt=&quot;opensource2&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Dec 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/12/15/open-source-license/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/12/15/open-source-license/</guid>
+        
+        <category>open source</category>
+        
+        <category>license</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>spring,cxf,restful发布webservice传递List,Map,List&lt;Map&gt;</title>
+        <description>&lt;p&gt;所用的jar包如下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cn161600_5fdW_438301.png&quot; alt=&quot;jar包&quot; /&gt;
+当服务器返回的是List或者是Map时，一定要将其封装在一个类中，&lt;/p&gt;
+
+&lt;p&gt;首先创建封装类,封装了List,Map对象，以及自定义的User类&lt;/p&gt;
+
+&lt;p&gt;User.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class User {
+	private String name;
+	private int age;
+	
+	public User() {
+	}
+	public User(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return &quot;User [age=&quot; + age + &quot;, name=&quot; + name + &quot;]&quot;;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;DataResult.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@XmlRootElement
+public class DataResult {
+
+	private List&amp;lt;User&amp;gt; userList;
+	private Map&amp;lt;String,User&amp;gt; userMap;
+
+	public List&amp;lt;User&amp;gt; getUserList() {
+		return userList;
+	}
+	public void setUserList(List&amp;lt;User&amp;gt; userList) {
+		this.userList = userList;
+	}
+	public Map&amp;lt;String, User&amp;gt; getUserMap() {
+		return userMap;
+	}
+	public void setUserMap(Map&amp;lt;String, User&amp;gt; userMap) {
+		this.userMap = userMap;
+	}
+
+	/**
+	 * 为了测试时方便输出重写的一个toString()方法
+	*/
+	public String toString(){
+		for(User u:userList){
+			System.out.println(u);
+		}
+		Set&amp;lt;String&amp;gt; key = userMap.keySet();
+		for (Iterator it = key.iterator(); it.hasNext();) {
+			String s = (String) it.next();
+			System.out.println(s + &quot;--&amp;gt;&quot; + userMap.get(s));
+		}
+		return &quot;end&quot;;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;创建webservice服务接口&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@Path(value = &quot;/get&quot;)
+public interface TestService {
+	
+	@GET
+	@Path(&quot;/listMap1&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public List&amp;lt;Map&amp;gt; getListMap1();
+	
+	@GET
+	@Path(&quot;/listMap&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public List&amp;lt;Map&amp;gt; getListMap();
+
+	@GET
+	@Path(&quot;/dataResult&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public DataResult getMap();
+
+	@GET
+	@Path(&quot;/string/{param}&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public String getName(@PathParam(&quot;param&quot;)String param);
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;创建服务接口实现类&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/**
+ * webservice服务实现类
+ * @author 那位先生
+ * */
+@Path(value = &quot;/get&quot;)
+public class TestServiceImpl implements TestService{
+	/**
+	 * @see com.webservice.service.TestService#getListMap1()
+	 * 传递 List&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt;
+	 */
+	@Override
+	@GET
+	@Path(&quot;/listMap1&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@XmlJavaTypeAdapter(MapAdapter.class)
+	public List&amp;lt;Map&amp;gt; getListMap1() {
+		List&amp;lt;Map&amp;gt; listMap = new ArrayList&amp;lt;Map&amp;gt;();
+		for (int i = 0; i &amp;lt; 5; i++) {
+			Map map = new HashMap&amp;lt;String,User&amp;gt;();
+			for (int j = 0; j &amp;lt; 5; j++) {
+				User user=new User(&quot;user&quot;+j,new Random().nextInt());
+				map.put(&quot;key&quot; + i + j, user);
+			}
+			listMap.add(map);
+		}
+		return listMap;
+	}
+
+	/**
+	 * @see com.webservice.service.TestService#getListMap()
+	 * 传递 List&amp;lt;Map&amp;lt;String,String&amp;gt;&amp;gt;
+	 * */
+	@Override
+	@GET
+	@Path(&quot;/listMap&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	@XmlJavaTypeAdapter(MapAdapter.class)
+	public List&amp;lt;Map&amp;gt; getListMap() {
+		List&amp;lt;Map&amp;gt; listMap = new ArrayList&amp;lt;Map&amp;gt;();
+		for (int i = 0; i &amp;lt; 5; i++) {
+			Map map = new HashMap();
+			for (int j = 0; j &amp;lt; 5; j++) {
+				map.put(&quot;key&quot; + i + j, &quot;value&quot; + i + j);
+			}
+			listMap.add(map);
+		}
+		return listMap;
+	}
+
+	/**
+	 * 传递List,Map时需要封装到一个类中
+	 * 
+	 * */
+	@Override
+	@GET
+	@Path(&quot;/dataResult&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public DataResult getMap() {
+		DataResult result=new DataResult();
+		List&amp;lt;User&amp;gt; userList=new ArrayList&amp;lt;User&amp;gt;();
+		Map&amp;lt;String,User&amp;gt; userMap=new HashMap&amp;lt;String,User&amp;gt;();
+		
+		for(int i=0;i&amp;lt;5;i++){
+			User user=new User(&quot;user&quot;+i,new Random().nextInt());
+			userList.add(user);
+			userMap.put(&quot;key&quot;+i, user);
+		}
+		result.setUserList(userList);
+		result.setUserMap(userMap);
+		return result;
+	}
+
+	/**
+	 * 传递String
+	 * */
+	@Override
+	@GET
+	@Path(&quot;/string/{param}&quot;)
+	@Produces( { MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON })
+	public String getName(@PathParam(&quot;param&quot;)String param) {
+		return param;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;因为在webservice服务中要传递List&amp;lt;Map&amp;gt;对象，这个不能直接传或者封装到某个类中，需要用到适配器和转换器&lt;/p&gt;
+
+&lt;p&gt;MapAdapter.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class MapAdapter extends XmlAdapter&amp;lt;MapConvertor, Map&amp;lt;String, Object&amp;gt;&amp;gt; {
+
+	@Override
+	public MapConvertor marshal(Map&amp;lt;String, Object&amp;gt; map) throws Exception {
+		MapConvertor convertor = new MapConvertor();
+		for(Map.Entry&amp;lt;String, Object&amp;gt; entry:map.entrySet()){
+			MapConvertor.MapEntry e = new MapConvertor.MapEntry(entry);
+			convertor.addEntry(e);
+		}
+		return convertor;
+	}
+
+	@Override
+	public Map&amp;lt;String, Object&amp;gt; unmarshal(MapConvertor map) throws Exception {
+		Map&amp;lt;String, Object&amp;gt; result = new HashMap&amp;lt;String,Object&amp;gt;();
+		for(MapConvertor.MapEntry e :map.getEntries()){
+			result.put(e.getKey(), e.getValue());
+		}
+		return result;
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;MapConvertor.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@XmlType(name = &quot;MapConvertor&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
+@XmlSeeAlso({User.class})//如果传递的是List&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt;,必须要@XmlSeeAlso注解
+public class MapConvertor {
+
+	private List&amp;lt;MapEntry&amp;gt; entries = new ArrayList&amp;lt;MapEntry&amp;gt;();
+
+	public void addEntry(MapEntry entry) {
+		entries.add(entry);
+	}
+
+	public static class MapEntry {
+		public MapEntry() {
+			super();
+		}
+
+		public MapEntry(Map.Entry&amp;lt;String, Object&amp;gt; entry) {
+			super();
+			this.key = entry.getKey();
+			this.value = entry.getValue();
+		}
+
+		public MapEntry(String key, Object value) {
+			super();
+			this.key = key;
+			this.value = value;
+		}
+
+		private String key;
+		private Object value;
+
+		public String getKey() {
+			return key;
+		}
+
+		public void setKey(String key) {
+			this.key = key;
+		}
+
+		public Object getValue() {
+			return value;
+		}
+
+		public void setValue(Object value) {
+			this.value = value;
+		}
+	}
+
+	public List&amp;lt;MapEntry&amp;gt; getEntries() {
+		return entries;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;还有过滤器，这个没怎么研究，所以随便实现了一下&lt;/p&gt;
+
+&lt;p&gt;TestInterceptor.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class TestInterceptor extends AbstractPhaseInterceptor&amp;lt;Message&amp;gt; {
+	public TestInterceptor() {
+		super(Phase.RECEIVE);
+	}
+
+	public TestInterceptor(String phase) {
+		super(phase);
+	}
+
+	@Override
+	public void handleMessage(Message arg0) throws Fault {
+		System.out.println(&quot;handleMessage()&quot;);
+	}
+} 最后全部交由spring容器管理
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;webservice-server.xml&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/beans&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:context=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/context&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:jaxws=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://cxf.apache.org/jaxws&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:jaxrs=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://cxf.apache.org/jaxrs&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/beans&lt;/span&gt; 
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/context&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/context/spring-context-3.0.xsd&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/jaxws&lt;/span&gt; 
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/schemas/jaxws.xsd&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/jaxrs&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/schemas/jaxrs.xsd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;import&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resource=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;classpath:META-INF/cxf/cxf.xml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;import&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resource=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;classpath:META-INF/cxf/cxf-extension-soap.xml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;import&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;resource=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;classpath:META-INF/cxf/cxf-servlet.xml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testServiceInterceptor&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.webservice.interceptor.TestInterceptor&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;service&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;com.webservice.service.impl.TestServiceImpl&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;jaxrs:server&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testServiceContainer&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;address=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/test&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;jaxrs:serviceBeans&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bean=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;service&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/jaxrs:serviceBeans&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;jaxrs:inInterceptors&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;ref&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;bean=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;testServiceInterceptor&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/jaxrs:inInterceptors&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;jaxrs:extensionMappings&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;entry&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;json&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;application/json&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;entry&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;xml&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;application/xml&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/jaxrs:extensionMappings&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;jaxrs:languageMappings&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;nt&quot;&gt;&amp;lt;entry&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;key=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cn&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cn-ZH&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/jaxrs:languageMappings&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/jaxrs:server&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;在web.xml中配置webservice的cxf Servlet以及spring容器
+	&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+	&lt;web-app version=&quot;2.5&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemalocation=&quot;http://java.sun.com/xml/ns/javaee  		http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;&gt;
+		&lt;context-param&gt;
+			&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+			&lt;param-value&gt;classpath:/webservice-server.xml&lt;/param-value&gt;
+		&lt;/context-param&gt;&lt;/web-app&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&amp;lt;listener&amp;gt;
+		&amp;lt;listener-class&amp;gt;org.springframework.web.context.ContextLoaderListener&amp;lt;/listener-class&amp;gt;
+	&amp;lt;/listener&amp;gt;
+
+	&amp;lt;servlet&amp;gt;
+		&amp;lt;servlet-name&amp;gt;CXFServlet&amp;lt;/servlet-name&amp;gt;
+		&amp;lt;servlet-class&amp;gt;org.apache.cxf.transport.servlet.CXFServlet&amp;lt;/servlet-class&amp;gt;
+	&amp;lt;/servlet&amp;gt;
+	&amp;lt;!-- 设置访问的目录 --&amp;gt;
+	&amp;lt;servlet-mapping&amp;gt;
+		&amp;lt;servlet-name&amp;gt;CXFServlet&amp;lt;/servlet-name&amp;gt;
+		&amp;lt;url-pattern&amp;gt;/services/*&amp;lt;/url-pattern&amp;gt;
+	&amp;lt;/servlet-mapping&amp;gt;
+	&amp;lt;welcome-file-list&amp;gt;
+		&amp;lt;welcome-file&amp;gt;index.jsp&amp;lt;/welcome-file&amp;gt;
+	&amp;lt;/welcome-file-list&amp;gt;
+&amp;lt;/web-app&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至此部署webservice就完成了，然后通过访问
+	http://localhost:8080/webservice/services
+或者
+	http://localhost:8080/webservice/services/test?_wadl
+来检测是否部署成功
+—————————————————————————————-&lt;/p&gt;
+
+&lt;p&gt;要注意的是
+服务器默认返回的是xml格式数据，当要返回json时则在路径后加  “?_type=json”即可，例如
+	http://localhost:8080/webservice/services/test/get/string/testString?_type=json&lt;/p&gt;
+
+&lt;p&gt;访问其他查看结果：
+	http://localhost:8080/webservice/services/test/get/string/testString?_type=json （访问这里时如果不返回json,返回xml,浏览器会显示解析xml失败，不知道为什么，所以在这里最好是返回json）
+	http://localhost:8080/webservice/services/test/get/dataResult
+	http://localhost:8080/webservice/services/test/get/listMap
+	http://localhost:8080/webservice/services/test/get/listMap1&lt;/p&gt;
+
+&lt;p&gt;接下来创建webservice客户端，在这里为了方便测试，将客户端和服务器端写在一起&lt;/p&gt;
+
+&lt;p&gt;ClientTest.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class ClientTest {
+
+	public static void main(String[] args) {
+		ClientTest test = new ClientTest();
+		String result = test.getResultString(&quot;success&quot;);
+		System.out.println(result);
+	}
+
+	/**
+	 * 获取List&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt;
+	 * */
+	public List&amp;lt;Map&amp;lt;String, User&amp;gt;&amp;gt; getListMap2() {
+		WebClient client = getClientBySpring();
+		String xml = client.path(&quot;get/listMap1&quot;).accept(&quot;application/xml&quot;).get(
+				String.class);
+		List&amp;lt;Map&amp;lt;String, User&amp;gt;&amp;gt; listMap = null;
+		try {
+			// 无法从服务器中直接获取List&amp;lt;Map&amp;gt;对象，所以只能获取xml,将其解析成List&amp;lt;Map&amp;gt;
+			listMap = XmlParse.parseToListMap2(xml);
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return listMap;
+	}
+
+	/**
+	 * 获取List&amp;lt;Map&amp;lt;String, String&amp;gt;&amp;gt;
+	 * */
+	public List&amp;lt;Map&amp;lt;String, String&amp;gt;&amp;gt; getListMap1() {
+		WebClient client = getClientBySpring();
+		String xml = client.path(&quot;get/listMap&quot;).accept(&quot;application/xml&quot;).get(
+				String.class);
+		List&amp;lt;Map&amp;lt;String, String&amp;gt;&amp;gt; listMap = null;
+		try {
+			// 无法从服务器中直接获取List&amp;lt;Map&amp;gt;对象，所以只能获取xml,将其解析成List&amp;lt;Map&amp;gt;
+			listMap = XmlParse.parseToListMap1(xml);
+		} catch (ParserConfigurationException e) {
+			e.printStackTrace();
+		} catch (SAXException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return listMap;
+	}
+
+	/**
+	 * 获取封装类
+	 * */
+	public DataResult getDataResult() {
+		WebClient client = getClientBySpring();
+		DataResult result = client.path(&quot;get/dataResult/&quot;)
+				.get(DataResult.class);
+		return result;
+	}
+
+	/**
+	 * 获取字符串结果
+	 * */
+	public String getResultString(String param) {
+		WebClient client = getClientBySpring();
+		String result = client.path(&quot;get/string/&quot; + param).get(String.class);
+		return result;
+	}
+
+	/**
+	 * 打印map
+	 * */
+	private void printMap(Map&amp;lt;String, String&amp;gt; map) {
+		Set&amp;lt;String&amp;gt; key = map.keySet();
+		for (Iterator it = key.iterator(); it.hasNext();) {
+			String s = (String) it.next();
+			System.out.println(s + &quot;--&amp;gt;&quot; + map.get(s));
+		}
+	}
+
+	/**
+	 * 
+	 * 从spring中获取client
+	 * */
+	private WebClient getClientBySpring() {
+		ApplicationContext ctx = new ClassPathXmlApplicationContext(
+				&quot;webservice-client.xml&quot;);
+		WebClient client = ctx.getBean(&quot;webClient&quot;, WebClient.class);
+		return client;
+	}
+
+	/**
+	 * 直接获取client
+	 * */
+	private WebClient getClientByCode() {
+		String url = &quot;http://localhost:8080/webservice/services/test/&quot;;
+		WebClient client = WebClient.create(url);
+		return client;
+	}
+}	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;XmlParse.java&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/**
+ * XML解析类
+ * */
+public class XmlParse {
+	
+	public static List&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt; parseToListMap2(String content) throws ParserConfigurationException, SAXException, IOException{
+		List&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt; listMap=new ArrayList&amp;lt;Map&amp;lt;String,User&amp;gt;&amp;gt;();
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(new InputSource(new StringReader(content)));
+		NodeList list = document.getElementsByTagName(&quot;mapConvertor&quot;);
+		for (int i = 0; i &amp;lt; list.getLength(); i++) {
+			Element element = (Element) list.item(i);
+			Map&amp;lt;String,User&amp;gt; map=new HashMap&amp;lt;String,User&amp;gt;();
+			NodeList entries=element.getElementsByTagName(&quot;entries&quot;);
+			for(int j=0;j&amp;lt;entries.getLength();j++){
+				Element entrie=(Element)entries.item(j);
+				String key = entrie.getElementsByTagName(&quot;key&quot;).item(0).getTextContent();
+				String age = entrie.getElementsByTagName(&quot;value&quot;).item(0).getFirstChild().getTextContent();
+				String name = entrie.getElementsByTagName(&quot;value&quot;).item(0).getLastChild().getTextContent();
+				User user=new User(name,Integer.parseInt(age));
+				map.put(key, user);
+			}
+			listMap.add(map);
+		}
+		return listMap;
+	}
+	public static List&amp;lt;Map&amp;lt;String,String&amp;gt;&amp;gt; parseToListMap1(String content) throws ParserConfigurationException, SAXException, IOException{
+		List&amp;lt;Map&amp;lt;String,String&amp;gt;&amp;gt; listMap=new ArrayList&amp;lt;Map&amp;lt;String,String&amp;gt;&amp;gt;();
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+		DocumentBuilder db = dbf.newDocumentBuilder();
+		Document document = db.parse(new InputSource(new StringReader(content)));
+		NodeList list = document.getElementsByTagName(&quot;mapConvertor&quot;);
+		for (int i = 0; i &amp;lt; list.getLength(); i++) {
+			Element element = (Element) list.item(i);
+			Map&amp;lt;String,String&amp;gt; map=new HashMap&amp;lt;String,String&amp;gt;();
+			NodeList entries=element.getElementsByTagName(&quot;entries&quot;);
+			for(int j=0;j&amp;lt;entries.getLength();j++){
+				Element entrie=(Element)entries.item(j);
+				String key = entrie.getElementsByTagName(&quot;key&quot;).item(0).getTextContent();
+				String value = entrie.getElementsByTagName(&quot;value&quot;).item(0).getTextContent();
+				map.put(key, value);
+			}
+			listMap.add(map);
+		}
+		return listMap;
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以将客户端交由spring管理&lt;/p&gt;
+
+&lt;p&gt;spring-client.xml&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;beans&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/beans&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:context=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/context&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xmlns:jaxws=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://cxf.apache.org/jaxws&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;xmlns:xsi=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;xsi:schemaLocation=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://www.springframework.org/schema/beans&lt;/span&gt; 
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/context&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://www.springframework.org/schema/context/spring-context-3.0.xsd&lt;/span&gt;
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/jaxws&lt;/span&gt; 
+    &lt;span class=&quot;err&quot;&gt;http://cxf.apache.org/schemas/jaxws.xsd&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;bean&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;webClient&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;org.apache.cxf.jaxrs.client.WebClient&quot;&lt;/span&gt;
+		&lt;span class=&quot;na&quot;&gt;factory-method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;create&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;constructor-arg&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;java.lang.String&quot;&lt;/span&gt;
+			&lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://localhost:8080/webservice/services/test/&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/bean&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/beans&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;至此大功告成。&lt;/p&gt;
+
+&lt;p&gt;PS：在学习webservice的时候，遇到过几个问题，希望有了解的能够告知，可以在我的博客下留言，,先谢谢了，问题如下
+1）在访问http://localhost:8080/webservice/services/test/get/string/testString?_type=json
+时，如果不加“_type=json”，浏览器会报错，不知道为什么，所以访问字符串时只能用返回json格式
+2）对于返回的List&amp;lt;Map&amp;gt;对象需要使用的转换器来实现，如果服务器返回的是一个普通类对象，但这个对象中存在List&amp;lt;Map&amp;gt;，该怎么办呢？我在osc上提到过，但没有得到回答。
+&lt;a href=&quot;http://download.csdn.net/detail/ruochenxing1/7683859&quot;&gt;源码下载地址&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/11/26/spring-restful-webservice/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/11/26/spring-restful-webservice/</guid>
+        
+        <category>springmvc</category>
+        
+        <category>webservice</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>springmvc导出excel并弹出下载框</title>
+        <description>&lt;p&gt;加入对应的jar包，包括springmvc,poi的，&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://7xomt5.com1.z0.glb.clouddn.com/cafebabe_cn125725_RXYL_438301.png&quot; alt=&quot;jar包&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;spring jar包在此不列举出来，主要是poi包，
+&lt;a href=&quot;http://download.csdn.net/download/huawei2010_2011_2012/5034041&quot;&gt;下载地址&lt;/a&gt;
+或者搜poi3.9&lt;/p&gt;
+
+&lt;h2 id=&quot;id-section&quot;&gt;定义实体类：&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Project&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;technology&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//所用技术&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;remarks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//备注&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//省略setter/getter&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;id-section-1&quot;&gt;控制器类：&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.BufferedInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.BufferedOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.ByteArrayInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.ByteArrayOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.IOException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io.InputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.servlet.ServletOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.servlet.http.HttpServletRequest&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;javax.servlet.http.HttpServletResponse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.springframework.stereotype.Controller&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.entity.Project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;com.util.ExcelUtil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nd&quot;&gt;@Controller&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;DownloadAct&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nd&quot;&gt;@RequestMapping&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;download_project.do&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;download&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletRequest&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HttpServletResponse&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;throws&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fileName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;excel文件&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//填充projects数据&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;createExcelRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]={&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ID&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;项目名&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;销售人&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;负责人&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;所用技术&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;备注&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//列名&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;saler&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;principal&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;technology&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;remarks&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;};&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//map中的key&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ByteArrayOutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ByteArrayOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;ExcelUtil&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createWorkBook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;printStackTrace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;os&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toByteArray&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;InputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ByteArrayInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;content&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 设置response参数，可以打开下载页面&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;reset&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setContentType&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;application/vnd.ms-excel;charset=utf-8&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setHeader&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Content-Disposition&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;attachment;filename=&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;.xls&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;iso-8859-1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ServletOutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;response&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;BufferedInputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;BufferedOutputStream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;bis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BufferedInputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;bos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;BufferedOutputStream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2048&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+            &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytesRead&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// Simple read/write loop.&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bytesRead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;buff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;bos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buff&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bytesRead&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;final&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IOException&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;throw&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;finally&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;bis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bos&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;bos&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createData&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// TODO Auto-generated method stub&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//自己实现&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createExcelRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listmap&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sheetName&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;sheet1&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;listmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Project&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;projects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;projects&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HashMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;();&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;id&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getId&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;name&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;technology&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getTechnology&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;put&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;remarks&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;project&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getRemarks&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;listmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mapValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;listmap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;id-excel&quot;&gt;Excel工具类：&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.hssf.usermodel.HSSFWorkbook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.Cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.Font&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.IndexedColors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.Row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.Sheet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.apache.poi.ss.usermodel.Workbook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;/**
+ * 导出Excel文档工具类
+ * @author 那位先生
+ * @date 2014-8-6
+ * */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExcelUtil&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+    &lt;span class=&quot;cm&quot;&gt;/**
+     * 创建excel文档，
+     * @param list 数据
+     * @param keys list中map的key数组集合
+     * @param columnNames excel的列名
+     * */&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Workbook&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;createWorkBook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;columnNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 创建excel工作簿&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Workbook&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;HSSFWorkbook&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 创建第一个sheet（页），并命名&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Sheet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createSheet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sheetName&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;// 手动设置列宽。第一个参数表示要为第几列设；，第二个参数表示列的宽度，n为列高的像素数。&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;sheet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setColumnWidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;35.7&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;150&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 创建第一行&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Row&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createRow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 创建两种单元格格式&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 创建两种字体&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Font&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createFont&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;Font&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createFont&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 创建第一种字体样式（用于列名）&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFontHeightInPoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IndexedColors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BLACK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBoldweight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Font&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BOLDWEIGHT_BOLD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 创建第二种字体样式（用于值）&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFontHeightInPoints&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setColor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;IndexedColors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BLACK&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getIndex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;//        Font f3=wb.createFont();&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//        f3.setFontHeightInPoints((short) 10);&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//        f3.setColor(IndexedColors.RED.getIndex());&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 设置第一种单元格的样式（用于列名）&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFont&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderTop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderBottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAlignment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ALIGN_CENTER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;// 设置第二种单元格的样式（用于值）&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setFont&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderLeft&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderRight&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderTop&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setBorderBottom&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;BORDER_THIN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setAlignment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;CellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ALIGN_CENTER&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//设置列名&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Cell&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCellValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;columnNames&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]);&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;//设置每行每列的值&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// Row 行,Cell 方格 , Row 和 Cell 都是从0开始计数的&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 创建一行，在页sheet上&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;Row&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createRow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;c1&quot;&gt;// 在row行上创建一个方格&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;short&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++){&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;Cell&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;createCell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCellValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;?&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+                &lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setCellStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cs2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;id-jsp&quot;&gt;在jsp页面中添加&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &amp;lt;input type=&quot;button&quot; value=&quot;导出数据&quot; onclick=&quot;download()&quot;/&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;id-js&quot;&gt;js中添加&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 	function download(){
+        var url=&quot;download_customer.do&quot;;
+        window.open(url);
+    }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 21 Nov 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/11/21/springmvn-export-excel/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/11/21/springmvn-export-excel/</guid>
+        
+        <category>java</category>
+        
+        <category>springmvc</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>JVM类加载机制</title>
+        <description>&lt;h2 id=&quot;id-section&quot;&gt;一、类加载的时机&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;有且只有5中情况 ## 二、类加载过程
+1.加载：查找并装载类型的二进制数据到虚拟机中
+	通过一个类的全限定名来获取定义此类的二进制字节流
+	将字节流所代表的静态存储结构 转化为 方法区的运行时数据结构
+	在内存中生成一个代表这个类的Class对象，作为方法区中这个类的各种数据的访问入口
+	注意：Java虚拟机规范允许类装载器缓存Java类型的二进制表现形式，如果预装载出错，则要等待该类被主动使用时抛出LinkageError的子类的异常 
+2.链接
+	1）验证：确保导入的类格式正确
+		为了确保Class文件的字节流中包含的信息符合当前虚拟机的要求
+			文件格式验证
+			元数据验证
+			字节码验证
+			符号引用验证
+		注意：Java虚拟机设计者可以决定如何及时验证类型。Java虚拟机规范列出了虚拟机可以抛出的异常以及在何种条件下必须抛出它们
+	2）准备：为类变量分配内存，设置默认初始值
+		正式为 类变量 分配内容并设置类变量初始值（默认值）的阶段，这些变量所使用的内存都将在方法区中进行分配
+		对于被final修饰的类变量，则会在准备阶段被赋值
+		假设一个类变量的定义为:
+			public static int value=123;
+		则在准备阶段，value的值会设置为默认值0而不是123（value赋值为123的putstatic指令是程序被编译后，存放在类构造器&amp;lt;clinit&amp;gt;()方法中，所以value赋值为123的动作会在初始化阶段才会执行）
+		但是，如果类字段的字段属性表中存在ConstantValue属性，那么准备阶段变量value就会被初始化为ConstantValue的值
+		假设一个类变量定义为
+			public final static int value=123;
+		编译时javac将会为value生成ConstantValue属性，在准备阶段，value的值会设置为123而不是0
+	3）解析：把类型中的符号引用转换为直接引用（也可能推迟到真正需要使用某个符号引用时再去解析它）
+		在类型的常量池中寻找类，接口，字段和方法的符号引用，把类型中的符号引用转换为直接引用
+		在使用操作符号引用的字节码指令之前，先对它们所使用的符号引用进行解析
+		虚拟机将常量池中的符号引用替换为直接引用的过程
+		符号引用：类和接口的全限定名、字段的名称和描述符、方法的名称和描述符
+		直接引用：直接指向目标的指针、相对偏移量、一个能间接定位到目标的句柄，如果有了直接引用，那引用的目标必定已经在内存中存在
+		解析主要针对类，接口，字段，类方法，接口方法，方法类型，方法句柄，调用点限定符等7类符号引用进行
+3.初始化
+	1.如果类存在直接超类，且直接超类还没有初始化，则先初始化直接超类
+	2.如果类存在一个类初始化方法（“&amp;lt;clinit&amp;gt;”，并不是所有的类都存在这个方法，如果一个类没有类变量也没有静态初始化语句，就没有该方法），就执行它
+	所有的类变量初始化语句和类型的静态初始化器都被Java编译器收集在一起，放到一个特殊的方法（“&amp;lt;clinit&amp;gt;”）中，称为类初始化方法，此方法只能被Java虚拟机调用
+	真正开始执行Java代码（字节码）的阶段
+	在初始化阶段，虚拟机根据程序代码去初始化 类变量和其他资源，也就是执行类构造器&amp;lt;clinit&amp;gt;()方法的过程
+	&amp;lt;clinit&amp;gt;()是由编译器自动收集类中的 所有类变量的赋值操作和静态代码块中的语句 合并产生的，编译器收集的顺序为代码中定义的顺序，如果一个类中没有静态代码块，也没有类变量的赋值操作，则不产生&amp;lt;clinit&amp;gt;()方法。
+	父类&amp;lt;clinit&amp;gt;()先执行，父接口不会，且&amp;lt;clinit&amp;gt;()方法是线程安全的
+
+	所有的Java虚拟机实现必须在每个类或接口首次主动使用时初始化。有以下六种
+	1）当创建某个类的新实例时，或者在字节码中执行new指令，或者通过不明确的创建、反射、克隆或者反序列化时。
+	2）当调用某个类的静态方法时（即在字节码中执行invokestatic指令）
+	3）当使用某个类或接口的静态字段，或者对该字段赋值时（即在字节码中执行getstatic或putstatic指令时，用final修饰的静态字段除外，它被初始化为一个编译时的常量表达式）
+	4）当调用Java API的某些反射方法时，比如类Class中的方法或者java.lang.reflect包中的类的方法
+	5）当初始化某个类的子类时（除接口外）
+	6）当虚拟机启动时某个被表明为启动类（含有main方法）的类
+	除以上六种情形外，所有其它使用Java类型的方式都是被动使用，都不会导致Java类型的初始化
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Sat, 11 Jul 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/07/11/jvmclassloading/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/07/11/jvmclassloading/</guid>
+        
+        <category>java</category>
+        
+        <category>classload</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>使用git更新博文</title>
+        <description>&lt;p&gt;git clone xxxx&lt;/p&gt;
+
+&lt;p&gt;cd xxxx&lt;/p&gt;
+
+&lt;p&gt;然后新建文件，yyyy-mm-dd-title-other.md&lt;/p&gt;
+
+&lt;p&gt;写博文&lt;/p&gt;
+
+&lt;p&gt;git add yyyy-mm-dd-title-other.md&lt;/p&gt;
+
+&lt;p&gt;git commit -m “hehe”&lt;/p&gt;
+
+&lt;p&gt;git push origin gh-pages&lt;/p&gt;
+
+&lt;p&gt;ok&lt;/p&gt;
+</description>
+        <pubDate>Fri, 12 Jun 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/06/12/gitsubmit/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/06/12/gitsubmit/</guid>
+        
+        <category>github</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+      <item>
+        <title>Java线程相关知识</title>
+        <description>&lt;h2 id=&quot;id-section&quot;&gt;竟态条件&amp;amp;临界区&lt;/h2&gt;
+&lt;p&gt;当多个线程竞争同一个资源时，如果对资源的访问顺序敏感，就称存在竟态条件。导致竟态条件发生的代码区称作临界区
+## 线程安全
+允许被多个线程同时执行的代码称作线程安全的代码。线程安全的代码不包含竞态条件。当多个线程同时更新共享资源时会引发竞态条件。
+### 局部变量
+局部变量存储在线程自己的栈中。也就是说，局部变量永远也不会被多个线程共享。所以，基础类型的局部变量是线程安全的。
+### 局部的对象引用
+对象的局部引用和基础类型的局部变量不太一样。尽管引用本身没有被共享，但引用所指的对象并没有存储在线程的栈内。所有的对象都存在共享堆中。如果在某个方法中创建的对象不会逃逸出（译者注：即该对象不会被其它方法获得，也不会被非局部变量引用到）该方法，那么它就是线程安全的。实际上，哪怕将这个对象作为参数传给其它方法，只要别的线程获取不到这个对象，那它仍是线程安全的。下面是一个线程安全的局部引用样例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;someMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;LocalObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;localObject&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LocalObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;localObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;callMethod&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;method2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;localObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;method2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;LocalObject&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;localObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;localObject&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;setValue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;value&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;样例中&lt;code class=&quot;highlighter-rouge&quot;&gt;LocalObject&lt;/code&gt;对象没有被方法返回，也没有被传递给&lt;code class=&quot;highlighter-rouge&quot;&gt;someMethod()&lt;/code&gt;方法外的对象。每个执行&lt;code class=&quot;highlighter-rouge&quot;&gt;someMethod()&lt;/code&gt;的线程都会创建自己的&lt;code class=&quot;highlighter-rouge&quot;&gt;LocalObject&lt;/code&gt;对象，并赋值给&lt;code class=&quot;highlighter-rouge&quot;&gt;localObject&lt;/code&gt;引用。因此，这里的&lt;code class=&quot;highlighter-rouge&quot;&gt;LocalObject&lt;/code&gt;是线程安全的。事实上，整个&lt;code class=&quot;highlighter-rouge&quot;&gt;someMethod()&lt;/code&gt;都是线程安全的。即使将&lt;code class=&quot;highlighter-rouge&quot;&gt;LocalObject&lt;/code&gt;作为参数传给同一个类的其它方法或其它类的方法时，它仍然是线程安全的。当然，如果&lt;code class=&quot;highlighter-rouge&quot;&gt;LocalObject&lt;/code&gt;通过某些方法被传给了别的线程，那它就不再是线程安全的了。
+### 对象成员
+对象成员存储在堆上。如果两个线程同时更新同一个对象的同一个成员，那这个代码就不是线程安全的。下面是一个样例：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;NotThreadSafe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;StringBuilder&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;builder&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;StringBuilder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;builder&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+	    	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;	
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;如果两个线程同时调用同一个&lt;code class=&quot;highlighter-rouge&quot;&gt;NotThreadSafe&lt;/code&gt;实例上的&lt;code class=&quot;highlighter-rouge&quot;&gt;add()&lt;/code&gt;方法，就会有竞态条件问题。例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sharedInstance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyRunnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyRunnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sharedInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyRunnable&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;implements&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Runnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyRunnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;){&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;instance&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+		&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(){&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;some text&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+		&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;注意两个&lt;code class=&quot;highlighter-rouge&quot;&gt;MyRunnable&lt;/code&gt;共享了同一个&lt;code class=&quot;highlighter-rouge&quot;&gt;NotThreadSafe&lt;/code&gt;对象。因此，当它们调用&lt;code class=&quot;highlighter-rouge&quot;&gt;add()&lt;/code&gt;方法时会造成竞态条件。
+当然，如果这两个线程在不同的&lt;code class=&quot;highlighter-rouge&quot;&gt;NotThreadSafe&lt;/code&gt;实例上调用&lt;code class=&quot;highlighter-rouge&quot;&gt;call()&lt;/code&gt;方法，就不会导致竞态条件。下面是稍微修改后的例子：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyRunnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyRunnable&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NotThreadSafe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在两个线程都有自己单独的&lt;code class=&quot;highlighter-rouge&quot;&gt;NotThreadSafe&lt;/code&gt;对象，调用&lt;code class=&quot;highlighter-rouge&quot;&gt;add()&lt;/code&gt;方法时就会互不干扰，再也不会有竞态条件问题了。所以非线程安全的对象仍可以通过某种方式来消除竞态条件。
+## 线程控制逃逸规则
+线程控制逃逸规则可以帮助你判断代码中对某些资源的访问是否是线程安全的。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) 如果一个资源的创建，使用，销毁都在同一个线程内完成，
+
+2) 且永远不会脱离该线程的控制，则该资源的使用就是线程安全的。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;资源可以是对象，数组，文件，数据库连接，套接字等等。Java中你无需主动销毁对象，所以“销毁”指不再有引用指向对象。
+即使对象本身线程安全，但如果该对象中包含其他资源（文件，数据库连接），整个应用也许就不再是线程安全的了。比如2个线程都创建了各自的数据库连接，每个连接自身是线程安全的，但它们所连接到的同一个数据库也许不是线程安全的。比如，2个线程执行如下代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) 检查记录X是否存在，如果不存在，插入X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;如果两个线程同时执行，而且碰巧检查的是同一个记录，那么两个线程最终可能都插入了记录：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1) 线程1检查记录X是否存在。检查结果：不存在
+
+2) 线程2检查记录X是否存在。检查结果：不存在
+
+3) 线程1插入记录X
+
+4) 线程2插入记录X
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;同样的问题也会发生在文件或其他共享资源上。因此，区分某个线程控制的对象是资源本身，还是仅仅到某个资源的引用很重要。&lt;/p&gt;
+
+&lt;h2 id=&quot;id-section-1&quot;&gt;线程安全的体现&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;不可变：对象被构建完后，其外部可见状态永远不会改变
+绝对线程安全：不管运行环境如何，调用者都不需要任何额外的同步措施
+相对线程安全：Java语言中的大部分线程安全类，或通常意义所说的线程安全。其保证单独的操作是安全的，对于一些特定顺序的连续调用，则需要额外的同步措施
+线程兼容：Java语言中的大部分类（ArrayList,HashMap等），对象本身并不是线程安全的，但是可以通过在客户端使用同步措施来保证对象在并发环境下安全使用，
+线程对立：无论使用哪种同步措施都不能保证线程安全，例如Thread的suspend resume等 ## 线程安全的实现方法：
+互斥同步：是一种悲观的并发策略，多个线程并发访问共享数据时，保证共享数据在同一时刻只能被一个（或者是一些，使用信号量时）线程使用；临界区，互斥量，信号量都是主要的互斥方式：synchronized，ReentrantLock等
+非阻塞同步：CAS指令，例如原子类的AtomicInteger.incrementAndGet()
+无同步方案：
+    可重入代码：不涉及数据共享的代码
+    线程本地共享：ThreadLocal ## 锁优化：
+适应性自旋：互斥同步对性能最大的影响是阻塞的实现，挂起线程和恢复线程的操作都需要转入内核态中完成，带来性能并发压力。如果物理机上有一个以上的处理器，能让两个以上的线程同时并行执行，当一个线程请求一个已经被另一个线程所占用的锁时，我们就可以让这个线程不要阻塞，而是选择“稍等一下”，让这个线程执行自旋，不放弃处理器的时间，看看另一个线程是否很快释放锁
+锁消除：对于一些代码，虽然要求同步，但是被检测到不可能存在数据共享，则可以对竞争的锁进行优化消除，例如局部变量的StringBuffer对象的多次append操作。
+锁粗化：如果一系列的重复操作都对同一个对象频繁的加锁解锁，则可以将加锁同步的范围扩展（粗化）到整个操作序列的外部，例如上面的append()，就是扩展到第一个append()操作之前和最后一个之后，这样只需加锁一次
+轻量级锁：没有多线程竞争的前提下，减少传统的重量级锁在使用时对操作系统互斥量产生的性能消耗；其提升性能的依据是，对于绝大部分锁，在整个同步周期内都是不存在竞争的。
+偏向锁：（JDK1.6）消除数据在无竞争情况下的同步原语，如果轻量锁是在无竞争的情况下使用CAS操作去消除同步使用的互斥量，那偏向锁就是在无竞争的情况下把整个同步都消除掉，连CAS操作都不做
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Thu, 07 May 2015 00:00:00 +0800</pubDate>
+        <link>http://ruochenxing.github.io/study/2015/05/07/java-thread/</link>
+        <guid isPermaLink="true">http://ruochenxing.github.io/study/2015/05/07/java-thread/</guid>
+        
+        <category>java</category>
+        
+        <category>thread</category>
+        
+        
+        <category>study</category>
+        
+      </item>
+    
+  </channel>
+</rss>
