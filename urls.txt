@@ -1,0 +1,9 @@
+http://www.cafebabe.cn/
+http://www.cafebabe.cn/tags/
+http://www.cafebabe.cn/categories/
+http://www.cafebabe.cn/archieves/
+http://www.cafebabe.cn/about/
+http://www.cafebabe.cn/study/2016/02/26/deep-learning/
+http://www.cafebabe.cn/study/2016/02/19/java8-lambda/
+http://www.cafebabe.cn/study/2015/11/26/spring-restful-webservice/
+http://www.cafebabe.cn/study/2015/11/21/springmvn-export-excel/
