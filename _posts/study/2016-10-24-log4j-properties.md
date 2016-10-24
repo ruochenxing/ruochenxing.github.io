@@ -62,14 +62,20 @@ Loggers组件在此系统中被分为五个级别：DEBUG、INFO、WARN、ERROR�
 
 #### 1、配置根Logger：
 log4j.rootLogger = [ level ] , appenderName1, appenderName2, …
+
 log4j.additivity.org.apache=false：表示Logger不会在父Logger的appender里输出，默认为true。
+
 level ：设定日志记录的最低级别，可设的值有OFF、FATAL、ERROR、WARN、INFO、DEBUG、ALL或者自定义的级别，Log4j建议只使用中间四个级别。通过在这里设定级别，您可以控制应用程序中相应级别的日志信息的开关，比如在这里设定了INFO级别，则应用程序中所有DEBUG级别的日志信息将不会被打印出来。
+
 appenderName：就是指定日志信息要输出到哪里。可以同时指定多个输出目的地，用逗号隔开。
+
 例如：log4j.rootLogger＝INFO,A1,B2,C3
 
 #### 2、配置日志信息输出目的地（appender）：
 log4j.appender.appenderName = className
+
 appenderName：自定义appderName，在log4j.rootLogger设置中使用；
+
 className：可设值如下：
 
 * (1)org.apache.log4j.ConsoleAppender（控制台）
@@ -81,6 +87,7 @@ className：可设值如下：
 
 #### 3、配置日志信息的输出格式（Layout）：
 log4j.appender.appenderName.layout=className
+
 className：可设值如下：
 
 * (1)org.apache.log4j.HTMLLayout（以HTML表格形式布局）
