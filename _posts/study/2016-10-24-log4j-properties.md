@@ -115,98 +115,152 @@ className：可设值如下：
 Log4j配置文件实现了输出到控制台、文件、回滚文件、发送日志邮件、输出到数据库日志表、自定义标签等全套功能。
 
 log4j.rootLogger=DEBUG,console,dailyFile,im
+
 log4j.additivity.org.apache=true
 
 \# 控制台(console)
 
 log4j.appender.console=org.apache.log4j.ConsoleAppender
+
 log4j.appender.console.Threshold=DEBUG
+
 log4j.appender.console.ImmediateFlush=true
+
 log4j.appender.console.Target=System.err
+
 log4j.appender.console.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.console.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# 日志文件(logFile)
 
 log4j.appender.logFile=org.apache.log4j.FileAppender
+
 log4j.appender.logFile.Threshold=DEBUG
+
 log4j.appender.logFile.ImmediateFlush=true
+
 log4j.appender.logFile.Append=true
+
 log4j.appender.logFile.File=D:/logs/log.log4j
+
 log4j.appender.logFile.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.logFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# 回滚文件(rollingFile)
 
 log4j.appender.rollingFile=org.apache.log4j.RollingFileAppender
+
 log4j.appender.rollingFile.Threshold=DEBUG
+
 log4j.appender.rollingFile.ImmediateFlush=true
+
 log4j.appender.rollingFile.Append=true
+
 log4j.appender.rollingFile.File=D:/logs/log.log4j
+
 log4j.appender.rollingFile.MaxFileSize=200KB
+
 log4j.appender.rollingFile.MaxBackupIndex=50
+
 log4j.appender.rollingFile.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.rollingFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# 定期回滚日志文件(dailyFile)
 
 log4j.appender.dailyFile=org.apache.log4j.DailyRollingFileAppender
+
 log4j.appender.dailyFile.Threshold=DEBUG
+
 log4j.appender.dailyFile.ImmediateFlush=true
+
 log4j.appender.dailyFile.Append=true
+
 log4j.appender.dailyFile.File=D:/logs/log.log4j
+
 log4j.appender.dailyFile.DatePattern='.'yyyy-MM-dd
+
 log4j.appender.dailyFile.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.dailyFile.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# 应用于socket
 
 log4j.appender.socket=org.apache.log4j.RollingFileAppender
+
 log4j.appender.socket.RemoteHost=localhost
+
 log4j.appender.socket.Port=5001
+
 log4j.appender.socket.LocationInfo=true
 
 \# Set up for Log Factor 5
+
 log4j.appender.socket.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.socket.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# Log Factor 5 Appender
 
 log4j.appender.LF5_APPENDER=org.apache.log4j.lf5.LF5Appender
+
 log4j.appender.LF5_APPENDER.MaxNumberOfRecords=2000
 
 \# 发送日志到指定邮件
 
 log4j.appender.mail=org.apache.log4j.net.SMTPAppender
+
 log4j.appender.mail.Threshold=FATAL
+
 log4j.appender.mail.BufferSize=10
+
 log4j.appender.mail.From = xxx@mail.com
+
 log4j.appender.mail.SMTPHost=mail.com
+
 log4j.appender.mail.Subject=Log4J Message
+
 log4j.appender.mail.To= xxx@mail.com
+
 log4j.appender.mail.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.mail.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 \# 应用于数据库
 
 log4j.appender.database=org.apache.log4j.jdbc.JDBCAppender
+
 log4j.appender.database.URL=jdbc:mysql://localhost:3306/test
+
 log4j.appender.database.driver=com.mysql.jdbc.Driver
+
 log4j.appender.database.user=root
+
 log4j.appender.database.password=
+
 log4j.appender.database.sql=INSERT INTO LOG4J (Message) VALUES('=[%-5p] %d(%r) --> [%t] %l: %m %x %n')
+
 log4j.appender.database.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.database.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 
 \# 自定义Appender
 
 log4j.appender.im = net.cybercorlin.util.logger.appender.IMAppender
+
 log4j.appender.im.host = mail.cybercorlin.net
+
 log4j.appender.im.username = username
+
 log4j.appender.im.password = password
+
 log4j.appender.im.recipient = corlin@cybercorlin.net
+
 log4j.appender.im.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.im.layout.ConversionPattern=[%-5p] %d(%r) --> [%t] %l: %m %x %n
 
 
@@ -215,19 +269,28 @@ log4j的强大功能无可置疑，但实际应用中免不了遇到某个功能
 先看一个常见的log4j.properties文件，它是在控制台和myweb.log文件中记录日志：
 
 log4j.rootLogger=DEBUG, stdout, logfile
+
 log4j.category.org.springframework=ERROR
+
 log4j.category.org.apache=INFO
 
 
 log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+
 log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.stdout.layout.ConversionPattern=%d %p [%c] - %m%n
 
 log4j.appender.logfile=org.apache.log4j.RollingFileAppender
+
 log4j.appender.logfile.File=${myweb.root}/WEB-INF/log/myweb.log
+
 log4j.appender.logfile.MaxFileSize=512KB
+
 log4j.appender.logfile.MaxBackupIndex=5
+
 log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.logfile.layout.ConversionPattern=%d %p [%c] - %m%n
 　　
 
@@ -240,9 +303,13 @@ private static Log logger = LogFactory.getLog(Test.class);
 然后在log4j.properties中加入:
 
 log4j.logger.cn.com.Test= DEBUG, test
+
 log4j.appender.test=org.apache.log4j.FileAppender
+
 log4j.appender.test.File=${myweb.root}/WEB-INF/log/test.log
+
 log4j.appender.test.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.test.layout.ConversionPattern=%d %p [%c] - %m%n
 
 也就是让cn.com.Test中的logger使用log4j.appender.test所做的配置。
@@ -257,15 +324,23 @@ private static Log logger2 = LogFactory.getLog("myTest2");
 然后在log4j.properties中加入:
 
 log4j.logger.myTest1= DEBUG, test1
+
 log4j.appender.test1=org.apache.log4j.FileAppender
+
 log4j.appender.test1.File=${myweb.root}/WEB-INF/log/test1.log
+
 log4j.appender.test1.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.test1.layout.ConversionPattern=%d %p [%c] - %m%n
 
 log4j.logger.myTest2= DEBUG, test2
+
 log4j.appender.test2=org.apache.log4j.FileAppender
+
 log4j.appender.test2.File=${myweb.root}/WEB-INF/log/test2.log
+
 log4j.appender.test2.layout=org.apache.log4j.PatternLayout
+
 log4j.appender.test2.layout.ConversionPattern=%d %p [%c] - %m%n
 
 也就是在用logger时给它一个自定义的名字(如这里的"myTest1")，然后在log4j.properties中做出相应配置即可。别忘了不同日志要使用不同的logger(如输出到test1.log的要用logger1.info("abc"))。
