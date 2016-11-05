@@ -8,8 +8,6 @@ description:  爬取QQ空间的`某个用户`的`可访问`的所有说说列表
 
 ---
 
-## 爬取QQ空间的说说列表
-
 
 爬取QQ空间的`某个用户`的`可访问`的所有说说列表，包括说说图片和评论图片，说说图片存放在emotions文件夹中，评论中的图片存放在comments文件夹中，说说列表存放在当前目录的`qq号.txt`文本文件中。
 
@@ -227,6 +225,8 @@ if __name__ == "__main__":
 ```
 
 `HttpClient.py`，`QzoneLogin.py`的代码参见[这里](https://git.oschina.net/sherlock65535/codes)
+
+<script src="https://gist.github.com/ruochenxing/9d1707831dca114d13ed60299179c636.js"></script>
 
 
 
