@@ -225,8 +225,3 @@ if __name__ == "__main__":
 ```
 
 `HttpClient.py`，`QzoneLogin.py`的代码参见[这里](https://git.oschina.net/sherlock65535/codes)
-
-<script src="https://gist.github.com/ruochenxing/9d1707831dca114d13ed60299179c636.js"></script>
-
-
-
