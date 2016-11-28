@@ -9,7 +9,7 @@ description:  机器学习(Machine Learning, ML)就是专门研究计算机怎�
 ---
 
 
-在这篇文章里大致的讲解了一下机器学习识别验证码的整个过程，现在我们用python代码来实现一下。
+在这篇[文章](https://my.oschina.net/aptx4869/blog/794661)里大致的讲解了一下机器学习识别验证码的整个过程，现在我们用python代码来实现一下。
 
 #### 环境
 * python2.7
@@ -283,7 +283,7 @@ def svm_model_test(filename):
 	return results
 ```
 
-至此，识别过程结束。
+至此，识别过程结束。完整代码：[](http://git.oschina.net/sherlock65535/codes/7vz1jc2g3n45hxoi9we6t95)
 
 
 
