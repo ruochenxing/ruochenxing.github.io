@@ -79,6 +79,7 @@ private void rotateLeft(Entry<K,V> p) {
 }
 ```
 动图如下
+
 ![3.gif](https://static.oschina.net/uploads/img/201612/15231646_C18W.gif)
 
 
@@ -113,6 +114,7 @@ private void rotateRight(Entry<K,V> p) {
 }
 ```
 动图如下
+
 ![5.gif](https://static.oschina.net/uploads/img/201612/15231938_BTQ8.gif)
 
 #### 查找
