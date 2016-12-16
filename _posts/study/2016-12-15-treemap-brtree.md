@@ -85,7 +85,7 @@ private void rotateLeft(Entry<K,V> p) {
 
 ##### 右旋
 右旋的过程是将待旋转节点x的左子树绕x顺时针旋转，使得x的左子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
-![4.png](https://static.oschina.net/uploads/img/201612/15231755_qaUv.png)
+![4.png](http://images2015.cnblogs.com/blog/939998/201605/939998-20160517212020498-954534792.png)
 
 代码如下：
 
