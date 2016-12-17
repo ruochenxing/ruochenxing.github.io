@@ -283,7 +283,7 @@ def svm_model_test(filename):
 	return results
 ```
 
-至此，识别过程结束。完整代码：[](http://git.oschina.net/sherlock65535/codes/7vz1jc2g3n45hxoi9we6t95)
+至此，识别过程结束。[完整代码](http://git.oschina.net/sherlock65535/codes/7vz1jc2g3n45hxoi9we6t95)
 
 
 
