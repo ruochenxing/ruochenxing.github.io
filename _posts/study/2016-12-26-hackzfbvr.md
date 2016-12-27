@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Python破解支付宝VR红包
-category: life
+category: study
 tags:
     - python
 description:  最近支付宝上线了VR红包的功能，试玩了几次后发现可以用图片识别进行破解，过程大概就是“截图->切割->除干扰->识别”，在这里简单的说一下过程和实现。
@@ -45,6 +45,7 @@ def handlerImg(path):
     pic = im.crop((left, top, left + width, top + width))
     
 ```
+
 ## 判断干扰线
 
 此处得到的pic即为切割后的图片，效果如下。
