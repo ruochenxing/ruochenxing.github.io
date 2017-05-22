@@ -1,10 +1,14 @@
-<div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-  var cloudTieConfig = {
-    url: document.location.href, 
-    sourceId: "",
-    productKey: "8ece3cc8043e4d1a9d6af162b8729e65",
-    target: "cloud-tie-wrapper"
-  };
+var gitment = new Gitment({
+  owner: 'ruochenxing',
+  repo: '/comments/',
+  oauth: {
+    client_id: 'af2335922b742b78f534',
+    client_secret: 'fa71ffdb7ff3239c3742d0729e3cbabb298cd9b6',
+  },
+})
+gitment.render('container')
 </script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
