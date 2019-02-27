@@ -83,3 +83,26 @@ description:  mongodb安装与使用
 	db.auth("admin", "123456")
 	```
 	
+#### 权限说明
+
+* 用户角色
+	read: 只读数据权限
+	readWrite:学些数据权限
+
+* 数据库管理角色
+	root: 超级用户
+	dbAdmin: 在当前db中执行管理操作的权限
+	dbOwner: 在当前db中执行任意操作
+	userADmin: 在当前db中管理user的权限
+
+* 数据库角色
+	readAnyDatabase: 在所有数据库上都有读取数据的权限
+	readWriteAnyDatabase: 在所有数据库上都有读写数据的权限
+	userAdminAnyDatabase: 在所有数据库上都有管理user的权限
+	dbAdminAnyDatabase: 管理所有数据库的权限
+
+* 集群管理
+	clusterAdmin: 管理机器的最高权限
+	clusterManager: 管理和监控集群的权限
+	clusterMonitor: 监控集群的权限
+	hostManager: 管理Server
