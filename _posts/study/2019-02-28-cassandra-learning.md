@@ -44,7 +44,6 @@ description:  cassandra安装与使用
 			<artifactId>cassandra-driver-core</artifactId>
 			<version>3.6.0</version>
 		</dependency>
-		
 		```
 	* 代码
 
@@ -52,9 +51,7 @@ description:  cassandra安装与使用
 	import com.datastax.driver.core.Cluster;
 	import com.datastax.driver.core.ResultSet;
 	import com.datastax.driver.core.Session;
-	
 	public class App {
-	
 		public static Session getSession(String keySpace) {
 			// 创建一个集群对象
 			Cluster cluster = Cluster.builder().addContactPoint("10.211.55.5").build();
@@ -64,7 +61,6 @@ description:  cassandra安装与使用
 			}
 			return cluster.connect();
 		}
-	
 		public static void testCreateKeySpace() {
 			Session session = getSession("");
 			// 创建一个名为tp的KeySpace
@@ -76,7 +72,6 @@ description:  cassandra安装与使用
 			session.execute(" USE tp ");
 			session.close();
 		}
-	
 		public static void testCreteTable() {
 			// Query
 			String query = "CREATE TABLE emp(emp_id int PRIMARY KEY, " + "emp_name text, " + "emp_city text, "
@@ -88,7 +83,6 @@ description:  cassandra安装与使用
 			System.out.println(result.isExhausted());
 			session.closeAsync();
 		}
-	
 		public static void testDeleteTable() {
 			String query = "DROP TABLE emp3;";
 			// Creating Session object
@@ -98,7 +92,6 @@ description:  cassandra安装与使用
 			System.out.println(result.isExhausted());
 			session.close();
 		}
-	
 		public static void testInsertTable() {
 			String query1 = "INSERT INTO emp (emp_id, emp_name, emp_city, emp_phone, emp_sal) VALUES(1,'ram', 'Hyderabad', 9848022338, 50000);";
 			String query2 = "INSERT INTO emp (emp_id, emp_name, emp_city, emp_phone, emp_sal) VALUES(2,'robin', 'Hyderabad', 9848022339, 40000);";
@@ -109,11 +102,69 @@ description:  cassandra安装与使用
 			session.execute(query3);
 			session.close();
 		}
-	
 		public static void main(String[] args) {
 			testCreateKeySpace();
 		}
 	}
 	```
-	
+
+### 集群环境搭建
+
+	* 服务器列表 10.211.55.3/10.211.55.4/10.211.55.6 都安装了cassandra
+	* 修改配置文件 `/usr/local/cassandra/conf/cassandra.yaml`
+		10.211.55.3 服务器
+
+		```
+		cluster_name: 'TC01'
+		num_tokens: 256
+		seed_provider:
+		    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+		      parameters:
+		          - seeds: "10.211.55.3"
+		listen_address: 10.211.55.3
+		rpc_address: 10.211.55.3
+		endpoint_snitch: SimpleSnitch
+		```
+
+		10.211.55.4 服务器
+
+		```
+		cluster_name: 'TC01'
+		num_tokens: 256
+		seed_provider:
+		    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+		      parameters:
+		          - seeds: "10.211.55.3"
+		listen_address: 10.211.55.4
+		rpc_address: 10.211.55.4
+		endpoint_snitch: SimpleSnitch
+		```
+
+		10.211.55.6 服务器
+
+		```
+		cluster_name: 'TC01'
+		num_tokens: 256
+		seed_provider:
+		    - class_name: org.apache.cassandra.locator.SimpleSeedProvider
+		      parameters:
+		          - seeds: "10.211.55.3"
+		listen_address: 10.211.55.6
+		rpc_address: 10.211.55.6
+		endpoint_snitch: SimpleSnitch
+		```
+	* 依次启动 `cassandra`
+	* 在`10.211.55.3`上执行 `nodetool status` 查看节点状态
+		```
+			--  Address      Load       Tokens       Owns (effective)  Host ID                               Rack
+			UN  10.211.55.3  129.47 KiB  256          100.0%            eb000f47-b82c-4011-928e-fccc5a0070df  rack1
+			UN  10.211.55.6  245.61 KiB  256          100.0%            e82cec80-aacd-42a0-9dda-b889a3c32984  rack1
+			UN  10.211.55.4  262.16 KiB  256          100.0%            5542461b-b303-4de7-b7c4-7bedf041345e  rack1
+		```
+
+	* 测试数据 执行`cqlsh 10.211.55.4`访问其中一台cassandra
+		* `CREATE KEYSPACE test WITH REPLICATION = { 'class' : 'NetworkTopologyStrategy', 'datacenter1' : 3 } AND DURABLE_WRITES = false;`
+		* `describe keyspaces`
+
+
 
