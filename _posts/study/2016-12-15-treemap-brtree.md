@@ -281,7 +281,7 @@ private void fixAfterInsertion(Entry<K,V> x) {
 * t的右子树不空，则t的后继是其右子树中最小的那个元素。
 * t的右孩子为空，则t的后继是其第一个向左走的祖先。
 如下图所示。
-![7.png](http://7xomt5.com1.z0.glb.clouddn.com/15232013_hYb27.png)
+![7.png](https://oscimg.oschina.net/oscnet/up-8784c702f1f15f02a8329b234dfe8ee4c9d.png)
 
 代码如下：
 
