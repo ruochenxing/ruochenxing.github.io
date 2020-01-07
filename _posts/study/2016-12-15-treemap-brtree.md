@@ -16,7 +16,7 @@ description:  Java TreeMap实现了SortedMap接口，也就是说会按照key的
 二叉查找树（Binary Search Tree，简称BST）是一棵二叉树，它的左子节点的值比父节点的值要小，右节点的值要比父节点的值大。它的高度决定了它的查找效率。
 
 BST存在的主要问题是，数在插入的时候会导致树倾斜，不同的插入顺序会导致树的高度不一样，而树的高度直接的影响了树的查找效率。如果树中插入的是随机数据，则执行效果很好，但如果插入的是有序或者逆序的数据，那么二叉查找树的执行速度就变得很慢。因为当插入数值有序时，二叉树就是非平衡的了，排在一条线上，其实就变成了一个链表……它的快速查找、插入和删除指定数据项的能力就丧失了。二叉树的理想高度是logN+1(N为节点个数，如下左图)，最坏的情况是所有的节点都在一条斜线上，这样的树的高度为N（如下右图）。
-![1.png](http://7xomt5.com1.z0.glb.clouddn.com/15231605_Hbuq1.png)
+![1.png](https://oscimg.oschina.net/oscnet/up-e392bb5085437c43a48d1945a024dc2fd43.png)
 
 ### 平衡二叉树
 平衡二叉树（Balanced Binary Tree）又被称为AVL树（有别于AVL算法），且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。平衡二叉树的常用实现方法有`红黑树`、`AVL`、`替罪羊树`、
@@ -49,7 +49,7 @@ static final class Entry<K,V> implements Map.Entry<K,V> {
 
 ##### 左旋
 左旋的过程是将待旋转节点x的右子树绕x逆时针旋转，使得x的右子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
-![2.png](http://7xomt5.com1.z0.glb.clouddn.com/15231755_qaUv2.png)
+![2.png](https://oscimg.oschina.net/oscnet/up-eb1605d28ac4bfff1b0e3b472b07b3aa99c.png)
 
 代码如下：
 
@@ -80,12 +80,12 @@ private void rotateLeft(Entry<K,V> p) {
 ```
 动图如下
 
-![3.gif](http://7xomt5.com1.z0.glb.clouddn.com/15231646_C18W3.gif)
+![3.gif](https://oscimg.oschina.net/oscnet/up-98fa91cf440ebd0ccff54dcb2b326e5b9dc.gif)
 
 
 ##### 右旋
 右旋的过程是将待旋转节点x的左子树绕x顺时针旋转，使得x的左子树成为x的父亲，同时修改相关节点的引用。旋转之后，二叉查找树的属性仍然满足。
-![4.png](http://7xomt5.com1.z0.glb.clouddn.com/treemap4.png)
+![4.png](https://oscimg.oschina.net/oscnet/up-e47ce183e4439b7fd41f06aa370dcf4a22a.png)
 
 代码如下：
 
@@ -115,11 +115,11 @@ private void rotateRight(Entry<K,V> p) {
 ```
 动图如下
 
-![5.gif](http://7xomt5.com1.z0.glb.clouddn.com/15231938_BTQ85.gif)
+![5.gif](https://oscimg.oschina.net/oscnet/up-aefc9da80b82561cea37809bb8ed3ec6045.gif)
 
 #### 查找
 `get(Object key)`方法根据指定的`key`值返回对应的`value`，该方法调用了`getEntry(Object key)`得到相应的`entry`，然后返回`entry.value`。`getEntry()`图解如下所示
-![6.png](http://7xomt5.com1.z0.glb.clouddn.com/15231957_h73v6.png)
+![6.png](https://oscimg.oschina.net/oscnet/up-f90b5c97e73e188a5ffa0de3cfe4e35ab0d.png)
 
 ```
 final Entry<K,V> getEntry(Object key) {
