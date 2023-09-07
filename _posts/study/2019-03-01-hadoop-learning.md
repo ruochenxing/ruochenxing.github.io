@@ -120,19 +120,18 @@ description:  Hadoop集群环境搭建与使用
 	                <name>mapreduce.jobhistory.webapp.address</name>
 	                <value>ruochenxing3:19888</value>
 	        </property>
- <property>
-		<name>yarn.app.mapreduce.am.env</name> 
-		<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
-	</property>
-	<property>
-		<name>mapreduce.map.env</name>
-		<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
-	</property>
-	<property>
-		<name>mapreduce.reduce.env</name>
-		<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
-	</property>
- 
+ 		<property>
+			<name>yarn.app.mapreduce.am.env</name> 
+			<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
+		</property>
+		<property>
+			<name>mapreduce.map.env</name>
+			<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
+		</property>
+		<property>
+			<name>mapreduce.reduce.env</name>
+			<value>HADOOP_MAPRED_HOME={hadoop classpath的值}</value>
+		</property>
 	</configuration>
 	```
 	
