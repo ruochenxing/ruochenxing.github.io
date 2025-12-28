@@ -1,25 +1,13 @@
-<!-- Footer -->
-<footer id="footer">
-<div class="container">
-  <div class="row">
-    <div class="col col_3_of_12">
-      <!-- Widget Text widget -->
-      <div class="widget">
-        <div class="widget_title"><h3>Bloginfo</h3></div>
-        <p>{{ site.description }}</p>
-      </div>
-      <!-- End Widget text widget -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-left">
+
+      <p class="footer-copyright">&copy; {{ 'now' | date: "%Y" }} 研磨时光. Built with Jekyll.</p>
     </div>
-    <div class="col col_3_of_12">
-      {% include recentsidebar.html %}
-    </div>
-    <div class="col col_3_of_12">
-      {% include social.html %}
-    </div>
-    <div class="col col_3_of_12">
-      {% include friendlylinks.html %}
+    <div class="footer-right">
+      <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">TWITTER</a>
+      <a href="https://github.com/{{ site.github_username }}" target="_blank">GITHUB</a>
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}" target="_blank">RSS</a>
     </div>
   </div>
-</div>
-</footer><!-- End Footer -->
-<a href="#top" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+</footer>

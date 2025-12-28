@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-subtitle">
+        <i class="fa-solid fa-code"></i> System.out.println("Hello World");
+      </div>
+      <h1 class="hero-title">
+        Thinking in <strong>Logic.</strong><br>
+        Creating with <strong class="highlight">Passion.</strong>
+      </h1>
+      <p class="hero-description">
+        欢迎来到我的数字实验室。作为一名全栈开发者，我在这里解构复杂的技术架构，重构生活的美学，寻找 Code 与 Art 的边界。
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="featured-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-star"></i> 精选内容</h2>
+      <a href="/">view_all() &rarr;</a>
+    </div>
+    <div class="featured-posts">
+      {% for post in site.posts limit:2 %}
+        <div class="featured-post-card">
+          <a href="{{ post.url | relative_url }}">
+            <div class="featured-post-image">
+              <img src="{{ post.image | default: '/assets/placeholder.svg' }}" alt="{{ post.title }}">
+            </div>
+            <div class="featured-post-content">
+              <div class="post-card-meta">
+                {% for tag in post.tags %}
+                <span class="post-card-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              <h3 class="featured-post-title">{{ post.title }}</h3>
+              <p class="featured-post-excerpt">
+                {% if post.description %}
+                  {{ post.description }}
+                {% else %}
+                  {{ post.excerpt | strip_html | truncatewords: 15 }}
+                {% endif %}
+              </p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

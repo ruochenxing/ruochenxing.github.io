@@ -47,7 +47,7 @@ recent_items: 20  # Applies to recent posts, apps lists
 recent_posts: 7
 paginate: 5       # Applies to blog page for pagination
 # Pagination path › Important for blog page in /blog/ to work
-paginate_path: "/page:num/"
+paginate_path: "/blog/page:num/"
 timezone:      null
 
 # Plugins
